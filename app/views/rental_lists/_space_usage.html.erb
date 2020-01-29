@@ -1,0 +1,53 @@
+
+<%= form.fields_for :rental_listing_space_usage, RentalListingSpaceUsage.new do |fact| %>
+  
+  <div class="submit-property__block">
+  <h3 class="submit-property__headline">Space usage</h3>
+  <div class="submit-property__features">
+      <div class="submit-property__group">
+          
+   
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :kitchen, class: "submit-property__checkbox", id: "air-conditioning21" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning21" class="submit-property__label submit-property__feature">kitchen</label>
+      </div>      
+
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :laundry_washer, class: "submit-property__checkbox", id: "air-conditioning311" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning311" class="submit-property__label submit-property__feature">laundry_washer</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :laundry_dryer, class: "submit-property__checkbox", id: "air-conditioning321" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning321" class="submit-property__label submit-property__feature">laundry_dryer</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :parking, class: "submit-property__checkbox", id: "air-conditioning41" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning41" class="submit-property__label submit-property__feature">parking</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :gym, class: "submit-property__checkbox", id: "air-conditioning51" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning51" class="submit-property__label submit-property__feature">gym</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :pool, class: "submit-property__checkbox", id: "air-conditioning61" , placeholder: placeholder="", :required => false%>
+          <label for="air-conditioning61" class="submit-property__label submit-property__feature">pool</label>
+      </div>
+      
+
+      
+      </div><!-- .submit-property__group -->
+  </div><!-- .submit-property__features -->
+</div><!-- .submit-property__block -->
+  
+<% end %>

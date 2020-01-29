@@ -1,0 +1,43 @@
+<div class="property__header">
+  <div class="container">
+    <div class="property__header-container">
+      <ul class="property__main">
+        <li class="property__title property__main-item">
+          <div class="property__meta">
+            <span class="property__offer">For <%= property.offer%></span>
+          </div><!-- .property__meta -->
+          <h2 class="property__name"> <%= property.title%></h2>
+          <span class="property__address"><i class="ion-ios-location-outline property__address-icon"></i>
+          <%= property.friendly_address%>
+          </span>
+        </li>
+        <li class="property__details property__main-item">
+          <ul class="property__stats">
+            <li class="property__stat"><span class="property__figure"><%= property.bedrooms%></span> Beds</li>
+            <li class="property__stat"><span class="property__figure"><%= property.bathrooms%></span> Baths</li>
+            <li class="property__stat"><span class="property__figure"><%= property.propert_area%></span> sq.ft</li>
+          </ul><!-- .listing__stats -->
+        </li>
+        <li class="property__price property__main-item">
+          <h4 class="property__price-primary">$<%= property.property_price%></h4>
+          <span class="property__price-secondary">$4,824/sq.ft</span>
+        </li>
+      </ul><!-- .property__main -->
+
+      <ul class="property__list">
+        <li class="property__item">
+          <a href="<%= edit_property_path(property)%>" class="property__link">
+            <i class="icon ion-edit property__icon" ></i>  
+            <span class="property__item-desc">Edit</span>
+          </a>
+        </li>
+        <li class="property__item">
+          <a href="<%= properties_path%>" class="property__link">
+            <i class="icon ion-arrow-left-a property__icon"></i>
+            <span class="property__item-desc">Back</span>
+          </a>
+        </li>
+      </ul><!-- .property__list -->
+    </div><!-- .property__header-container -->
+  </div><!-- .container -->
+</div><!-- .property__header -->s

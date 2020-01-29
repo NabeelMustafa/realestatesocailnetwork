@@ -1,0 +1,168 @@
+<main class="col-md-9">
+  <div class="property__feature-container">
+    <div class="property__slider property__slider--v2">
+        <div class="property__slider-container">
+          
+          <div class="property__slider-main">
+            <div class="property__slider-images">
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+               <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+               <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+               <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+  
+              <div class="property__slider-image">
+                <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+              </div><!-- .property__slider-image -->
+            </div><!-- .property__slider-images -->
+  
+            <ul class="image-navigation">
+              <li class="image-navigation__prev">
+                <span class="ion-ios-arrow-left"></span>
+              </li>
+              <li class="image-navigation__next">
+                <span class="ion-ios-arrow-right"></span>
+              </li>
+            </ul>
+  
+            <span class="property__slider-info"><i class="ion-android-camera"></i><span class="sliderInfo"></span></span>
+          </div><!-- .property__slider-main -->
+
+          <ul class="property__slider-nav property__slider-nav--horizontal">
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+             <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+  
+            <li class="property__slider-item">
+              <%= image_tag 'uploads/slider.jpeg', alt: 'Image 1'%>
+            </li><!-- .property__slider-item -->
+          </ul><!-- .property__slider-nav -->
+        </div><!-- .property__slider-container -->
+      </div><!-- .property__slider -->
+
+
+    <div class="property__feature">
+      <h3 class="property__feature-title property__feature-title--b-spacing">Property Description</h3>
+      <%= property.description.html_safe %>
+
+    </div><!-- .property__feature -->
+
+    <div class="property__feature">
+      <h3 class="property__feature-title property__feature-title--b-spacing">Property Details</h3>
+      <ul class="property__details-list">
+        <li class="property__details-item"><span class="property__details-item--cat"> Property Type: </span><%= property.property_type.capitalize! %></li>
+        <li class="property__details-item"><span class="property__details-item--cat">Year Built:</span> <%= property.building_year %></li>
+        <li class="property__details-item"><span class="property__details-item--cat">Water: </span> 
+         <%= property.water %> </li>
+         <li class="property__details-item"><span class="property__details-item--cat">Cooling: </span> 
+         <%= property.cooling %> </li>
+         <li class="property__details-item"><span class="property__details-item--cat">Sewer: </span> 
+         <%= property.sewer %> </li>
+         <li class="property__details-item"><span class="property__details-item--cat">Parking: </span> 
+         <%= property.parking %> </li>
+         <li class="property__details-item"><span class="property__details-item--cat">Exersice Room:</span> 
+         <%= property.exersie_room %> </li>
+        <li class="property__details-item"><span class="property__details-item--cat">Lot size:</span> <%= property.lot_size%></li>
+      </ul><!-- .property__details-list -->
+    </div><!-- .property__feature -->
+
+    <div class="property__feature">
+      <h3 class="property__feature-title property__feature-title--b-spacing">Property Features</h3>
+      <ul class="property__features-list">
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Air Conditioning</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Barbeque</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Dryer</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Gym</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Laundry</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Lawn</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Microwave</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Outdoor Shower</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Refrigerator</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Sauna</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Swimming Pool</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>TV Cable</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Washer</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Wifi</li>
+        <li class="property__features-item"><span class="property__features-icon ion-checkmark-round"></span>Window Coverings</li>
+      </ul><!-- .property__features-list -->
+    </div><!-- .property__feature -->
+  </div><!-- .property__feature-container -->
+</main>

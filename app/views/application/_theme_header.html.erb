@@ -1,0 +1,84 @@
+<header class="navbar-custom sticky" style="padding: 0px; width:100%; height: 60px">
+    <div class="header__main" style=" display: inline-table;     margin-top: -10px;  width: 100%  ">
+      
+
+      <div class="nav-mobile" style="position: initial; ">
+      
+      <div class="header__logo" style="">
+        <a href="index.html">
+          <%= link_to root_path do %>
+            <%= image_tag "RESNlogo1.png",:style=>"height: 57px; width: 57px" %>
+          <% end %>	
+        </a>
+      </div><!-- .header__logo -->
+        <a href="#" class="nav-toggle">
+          <span></span>
+        </a><!-- .nav-toggle -->
+      </div><!-- .nav-mobile -->
+
+      <div class="header__menu header__menu--v6" >
+        <ul class="header__nav" style="margin-right: 0px;     width: 100%;">
+          <li class="header__nav-item" style="margin: 0px 2px;">
+              <%= link_to 'Buy', buy_path, class: 'header__nav-link header__nav-link--v2'  %>            
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'Rent', rent_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'Sell', sell_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'Mortgage', mortgage_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'Insurance', insurance_path, class: 'header__nav-link header__nav-link--v2' %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 25px;">
+            <div class="header__logo logo-hide">
+            <%= link_to root_path do %>
+              <%= image_tag "RESNlogo1.png",:style=>"max-height: 60px" %>
+            <% end %>
+          </div><!-- .header__logo -->
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'Realtors', realtors_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%=link_to "Services", services_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to 'List New', list_new_path, class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <% if user_signed_in? %>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to "Messages", '/chats' , class: 'header__nav-link header__nav-link--v2'  %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+              <a href="#" class="header__nav-link header__nav-link--v2">Account</a>
+              <ul>
+                <li >
+                  <%= link_to 'Profile', current_user.profile.first ? profiles_path : new_profile_path   %>                  
+                </li>
+                <li >
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete  %>    
+                </li
+              </ul>
+          </li>
+          <% else %>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to "Sign up", new_user_registration_path, class: 'header__nav-link header__nav-link--v2'   %>
+          </li>
+          <li class="header__nav-item" style="margin: 0px 2px;">
+            <%= link_to "Sign in", new_user_session_path, class: 'header__nav-link header__nav-link--v2' %>
+
+          </li> 
+          <% end %>
+         
+        </ul><!-- .header__nav -->
+
+
+      </div><!-- .header__menu -->
+		
+    </div><!-- .header__main -->
+</header><!-- .header -->

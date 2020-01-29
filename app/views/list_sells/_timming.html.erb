@@ -1,0 +1,27 @@
+
+<div class="submit-property__group">
+<label for="property-featured-image" class="submit-property__label"></label>
+<div class="submit-property__upload">
+<%= form.add_nested_fields_link :sell_visit_times , "Setup time for visit"%>
+
+</div><!-- .submit-proeprty__upload -->
+</div><!-- .submit-property__group -->
+
+
+<%= form.nested_fields_for :sell_visit_times do |ff| %>
+  <div class="submit-property__group">
+      <%= ff.text_field :date, class: "submit-property__field", placeholder: placeholder="10/10/2018", :required => true%>
+  </div>
+
+  <div class="submit-property__group">
+      <%= ff.text_field :start_time, class: "submit-property__field", placeholder: placeholder="Star time", :required => true%>
+  </div>
+
+  <div class="submit-property__group">
+      <%= ff.text_field :end_time, class: "submit-property__field", placeholder: placeholder="End time", :required => true%>
+  </div>
+  <%= ff.remove_nested_fields_link 'Remove',method: :delete, class: 'btn btn-primary', role: 'button'%>
+<% end %>
+
+<br/>
+

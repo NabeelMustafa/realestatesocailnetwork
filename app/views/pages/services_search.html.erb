@@ -1,0 +1,44 @@
+<section class="service_banner">
+<div class="container">
+  <div class="agent-banner-text" >
+    <h5>Home Services Search</h5>
+
+  </div>
+  <%= form_with(url: "search", method: "get", local: true) do |form| %>
+    <div class="banner-input" style="margin-left: 25%;">
+      <div class="listing-sort listing-sort--main-listing" style="width: 50%;float: left; border-radius: 6px; border: 2px solid white; background: transparent; padding: 0px;">
+        <input type="submit" value="" class="main-listing__form-field agent-submit" style="width: 10% ;float:right">   
+        <%= form.text_field "title", id: "search_agent", class: "main-listing__form-field ", placeholder: "Search by Name or Location...", style: "width: 75% ;float:right; background: transparent; color: white!;" %>  
+        <div class="listing-sort__inner" style="float:left;margin: 0px; width: 25%; padding: 0px;">
+          <p class="listing-sort__sort">
+            <%= form.select("category",options_for_select(["Find Service", "Assembly", "Carpet Cleaning", "Electrical", "House Cleaning", "HVAC", "Handyman", "IT", "Junk Removal", "Lawn Care","Moving", "Painting", "Plumbing", "Staging", "Photography", "Videography", "Inspectors"], :selected => "Find Service"), {include_blank: false}, { :class => 'ht-field listing-sort__field' }) %>
+          </p><!-- .listing-sort__sort -->
+        </div><!-- .listing-sort__inner -->
+      </div><!-- .listing-sort -->
+
+    </div>
+  <% end %>
+</div>
+</section>
+
+<section style="margin-top: 50px">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 style="margin-left: 15px; padding-bottom: 30px; font-size: 24px;">Search Results
+      </h2>
+      <% @services.each do |service| %>
+        <%= render 'services/service_card', :f => service %>
+      <% end %>
+      <% if @services.length < 1 %>
+        <p class="text-center">No Search Results Matching Your Query.</p>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="text-center">
+  <%= will_paginate @services, renderer: BootstrapPagination::Rails %>
+</div>
+
+
+

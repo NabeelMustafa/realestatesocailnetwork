@@ -1,0 +1,101 @@
+
+    
+    <!-- Header Ends Here -->
+    <!-- Banner Section Starts Here -->
+    <section class="banner">
+      <div class="container">
+        <div class="banner-text" style="margin-bottom: 335px; margin-top: 90px;">
+          <h5>Real Estate Social Network</h5>
+          <!-- <p>Find A Place To Call Home</p> -->
+          <a href="" class="active">Residential </a>
+          <a href=""> Commercial </a>
+          <form>
+            <input type="text" placeholder="Enter an address, neighborhood, city, or zip code" name="">
+            <input type="submit" value="" name="">
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Banner Section Ends Here -->
+    <section class="homes">
+      <div class="container">
+        <div class="homes-head">
+          <h5> Join The World's Largest Real Estate Social Network
+          </h5>
+          <h6></h6>
+        </div>
+        <div class="homes-data">
+          <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+              <div class="home-box">
+                <%= image_tag "BuyAHome.png" %>
+                <h5> Buy A Property </h5>
+                <p> Find your dream home on RESN and one of our local and licensed agents will properly guide you thru the transaction.</p>
+                <a href=""  style="background:#006aff;
+                border:1px solid #006aff;
+                color:white;"> Buy A Property </a>
+              </div>
+            </div>
+            
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+              <div class="home-box">
+                <%= image_tag "RentAHome.png" %>
+                <h5> Rent A Property </h5>
+                <p> Rent a home for a vacation or permanent place of residence and RESN will properly guide you thru the transaction.</p>
+                <a href=""  style="background:#006aff;
+                border:1px solid #006aff;
+                color:white;"> Rent A Property </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+              <div class="home-box">
+               <%= image_tag "ForSale.png" %>
+                <h5> Sell A Property</h5>
+                <p> Sell your current home with RESN and one of our local and licensed agents will properly guide you thru the transaction.</p>
+                <a href="" style="background:#006aff;
+                border:1px solid #006aff;
+                color:white;"> Sell A Property </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Bootstrap Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	
+      
+      	$('.info-box').children("h5").click(function(){
+      		$(this).parent(".info-box").children("p").slideToggle()
+      		$(this).toggleClass("blue-bg")
+      
+      	})
+      
+      
+      	var val1 = 0;
+      
+      	$('.menu-hamburger').children("img").click(function(){
+      
+      		if(val1==0){
+      			$(this).attr("src","images/cross.png")
+      		$('.menu-item').slideToggle()
+      
+      		val1 = 1;
+      	
+      	}
+      	else {
+      		$('.menu-item').slideToggle()
+      		$(this).attr("src","images/hamburger.png")
+      		val1 = 0;
+      
+      	}
+      	})
+      })
+      
+      
+    </script>

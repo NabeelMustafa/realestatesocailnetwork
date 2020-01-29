@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kitchen: false
+  laundry_washer: false
+  laundry_dryer: false
+  parking: false
+  gym: false
+  pool: false
+  hot_tub: false
+  elevator: false
+
+two:
+  kitchen: false
+  laundry_washer: false
+  laundry_dryer: false
+  parking: false
+  gym: false
+  pool: false
+  hot_tub: false
+  elevator: false

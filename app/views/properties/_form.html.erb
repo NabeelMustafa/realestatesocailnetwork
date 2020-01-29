@@ -1,0 +1,308 @@
+
+
+
+<%= form_with(model: property, local: true) do |form| %>
+<div class="col-md-9">
+    <% if property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+        <ul>
+        <% property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Basic Information</h3>
+        <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">Property Title *</label>
+            <%= form.text_field :title, class: "submit-property__field", placeholder: placeholder="Perfect House for Sale", :required => true%>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-type" class="submit-property__label">Property Type *</label>
+                    <%= form.select(:property_type, options_for_select([["House", "house"], ["Appertment", "appertment"], ["Commercial", "commercial"]], :selected => form.object.property_type), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div>
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-offer" class="submit-property__label">Offer *</label>
+                    <%= form.select(:offer, options_for_select([["For rent", "rent"], ["For sale", "sale"]], :selected => form.object.offer), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div>
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-rental-period" class="submit-property__label">Rental Period *</label>
+                    <%= form.select(:rental_period, options_for_select([["Monthly", "monthly"], ["Yearly", "yearly"]], :selected => form.object.rental_period), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div>
+            </div>
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-price" class="submit-property__label">Property Price *</label>
+                    <%= form.text_field :property_price, class: "submit-property__field", required: true%>
+                    <span class="submit-property__unit">USD</span>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-area" class="submit-property__label">Property Area *</label>
+                    <%= form.text_field :propert_area, class: "submit-property__field", required: true %>
+                    <span class="submit-property__unit">sq.ft</span>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-room" class="submit-property__label">Property Room *</label>
+                    <%= form.select(:property_room, options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], :selected => form.object.property_room), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="submit-property__group">
+            <label for="submit-property-wysiwyg" class="submit-property__label">Description *</label>
+            <%= form.text_area :description, id: "submit-property-wysiwyg", required: true %>
+        </div><!-- .submit-property__group -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Gallery or Video</h3>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <div class="submit-property__group">
+                    <label for="property-featured-image" class="submit-property__label">Featured Image *</label>
+                    <div class="submit-property__upload">
+                        <input type="file">
+                        <div class="submit-property__upload-inner">
+                            <span class="ion-ios-plus-outline submit-property__icon"></span>
+                            <span class="submit-property__upload-desc">Drop image here or click to upload</span>
+                        </div>
+                    </div><!-- .submit-proeprty__upload -->
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-7">
+                <div class="submit-property__group">
+                    <label for="property-media" class="submit-property__label">All Images or Video </label>
+                    <div class="submit-property__upload">
+                        <input type="file" multiple>
+                        <div class="submit-property__upload-inner">
+                            <span class="ion-ios-plus-outline submit-property__icon"></span>
+                            <span class="submit-property__upload-desc">Drop all images here or click to upload</span>
+                        </div>
+                    </div><!-- .submit-proeprty__upload -->
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Location</h3>
+        <div class="submit-property__group">
+            <div id="submit-property-map"></div>
+        </div><!-- .submit-property__group -->
+
+        <div class="submit-property__group">
+            <label for="property-map-address" class="submit-property__label">Google Map Address *</label>
+            <%= form.text_field :google_map_address, class: "submit-property__field", required: true %>
+        </div><!-- .submit-property__group -->
+
+        <div class="submit-property__group">
+            <label for="property-address" class="submit-property__label">Friendly Address</label>
+            <%= form.text_field :friendly_address, class: "submit-property__field"  %>
+
+            <input type="text" >
+        </div><!-- .submit-property__group -->
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-longtitude" class="submit-property__label">Longtitude</label>
+                    <%= form.text_field :longtitude, class: "submit-property__field" %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-latitude" class="submit-property__label">Latitude</label>
+                    <%= form.text_field :latitude, class: "submit-property__field" %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-region" class="submit-property__label">Region</label>
+                    <%= form.select(:region, options_for_select([
+                      ["Arizona", "Arizona"], 
+                      ["Colorado", "Colorado"],
+                      ["Idaho", "Idaho"], 
+                      ["Montana", "Montana"], 
+                      ["Nebraska", "Nebraska"],
+                      ["New Mexico", "New Mexico"],
+                      ["Utah", "Utah"],
+                      ["Wyoming", "Wyoming"],
+                      ["Connecticut", "Connecticut"],
+                      ["Delaware", "Delaware"],
+                      ["Florida", "Florida"],
+                      ["Georgia", "Georgia"],
+                      ["Indiana", "Indiana"],
+                      ["Maine", "Maine"],
+                      ], :selected => form.object.region), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Detailed Information</h3>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-year" class="submit-property__label">Building Year *</label>
+                    <%= form.select(:building_year, options_for_select([["1990 - 1999", "1990s"], ["2000 - 2009", "2000s"], ["2010 - 2019", "2010s"]], :selected => form.object.building_year), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-bedrooms" class="submit-property__label">Bedrooms *</label>
+                    <%= form.select(:bedrooms, options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], :selected => form.object.bedrooms), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-bathrooms" class="submit-property__label">Bathrooms *</label>
+                    <%= form.select(:bathrooms, options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], :selected => form.object.bathrooms), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-lot-size" class="submit-property__label">Lot size *</label>
+                    <%= form.text_field :lot_size, class: "submit-property__field", required: true %>
+                    <span class="submit-property__unit">sq.ft</span>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-parking" class="submit-property__label">Parking</label>
+                    <%= form.text_field :parking, class: "submit-property__field", required: true %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-cooling" class="submit-property__label">Cooling</label>
+                    <%= form.text_field :cooling, class: "submit-property__field", required: true %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-sewer" class="submit-property__label">Sewer</label>
+                    <%= form.text_field :sewer, class: "submit-property__field", required: true %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-water" class="submit-property__label">Water</label>
+                    <%= form.text_field :water, class: "submit-property__field", required: true %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-exercise-room" class="submit-property__label">Exercise Room</label>
+                    <%= form.text_field :exersie_room, class: "submit-property__field", required: true %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Other Features</h3>
+        <div class="submit-property__features">
+            <div class="submit-property__group">
+                
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" id="air-conditioning" class="submit-property__checkbox">
+                    <label for="air-conditioning" class="submit-property__label submit-property__feature">Air Conditioning</label>
+                </div>        
+            
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="lawn" id="lawn" class="submit-property__checkbox">
+                    <label for="lawn" class="submit-property__label submit-property__feature">Lawn</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="swimming-pool" id="swimming-pool" class="submit-property__checkbox">
+                    <label for="swimming-pool" class="submit-property__label submit-property__feature">Swimming Pool</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="barbecue" id="barbecue" class="submit-property__checkbox">
+                    <label for="barbecue" class="submit-property__label submit-property__feature">Barbecue</label>
+                </div>
+            
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="microwave" id="microwave" class="submit-property__checkbox">
+                    <label for="microwave" class="submit-property__label submit-property__feature">Microwave</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="tv-cable" id="tv-cable" class="submit-property__checkbox">
+                    <label for="tv-cable" class="submit-property__label submit-property__feature">TV Cable</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="washer" id="washer" class="submit-property__checkbox">
+                    <label for="washer" class="submit-property__label submit-property__feature">Washer</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="outdoor-shower" id="outdoor-shower" class="submit-property__checkbox">
+                    <label for="outdoor-shower" class="submit-property__label submit-property__feature">Outdoor Shower</label>
+                </div>
+
+                <div class="submit-property__wrapper">
+                    <input type="checkbox" name="gym" id="gym" class="submit-property__checkbox">
+                    <label for="gym" class="submit-property__label submit-property__feature">Gym</label>
+                </div>
+            </div><!-- .submit-property__group -->
+        </div><!-- .submit-property__features -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Plan</h3>
+        <div class="submit-property__group">
+            <div class="submit-property__upload">
+                <input type="file" multiple>
+                <div class="submit-property__upload-inner">
+                    <span class="ion-ios-plus-outline submit-property__icon"></span>
+                    <span class="submit-property__upload-desc">Drop all images here or click to upload</span>
+                </div>
+            </div><!-- .submit-proeprty__upload -->
+        </div><!-- .submit-property__group -->
+    </div><!-- .submit-property__block -->
+
+    <button type="submit" class="submit-property__submit">Submit</button>
+    <a href="<%= properties_path %>" class="submit-property__submit" style="background-color: #1FC2E1;">Cancel</a>
+
+</div>
+<% end %>

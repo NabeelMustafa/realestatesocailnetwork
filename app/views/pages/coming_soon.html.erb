@@ -1,0 +1,65 @@
+<div class="coming-soon">
+  <div class="coming-soon__overlay">
+    <div class="coming-soon__container">
+      <header class="header--coming-soon">
+        <div class="container">
+          <div class="header__logo">
+            <%= link_to root_path do%>
+              <h1 class="screen-reader-text">Realand</h1>
+              <%= image_tag 'uploads/logo.png', alt: 'Realand'%>
+            <% end %>
+          </div>
+        </div><!-- .container -->
+      </header>
+      <main>
+        <div class="container">
+          <div class="coming-soon__countdown">
+            <ul id="coming-soon__clock">
+              <li class="coming-soon__placeholder">
+                <span class="days coming-soon__time"></span>
+                <div class="coming-soon__unit">Days</div>
+              </li>
+
+              <li class="coming-soon__placeholder">
+                <span class="hours coming-soon__time"></span>
+                <div class="coming-soon__unit">Hours</div>
+              </li>
+
+              <li class="coming-soon__placeholder">
+                <span class="minutes coming-soon__time"></span>
+                <div class="coming-soon__unit">Minutes</div>
+              </li>
+
+              <li class="coming-soon__placeholder">
+                <span class="seconds coming-soon__time"></span>
+                <div class="coming-soon__unit">Seconds</div>
+              </li>
+            </ul>
+          </div><!-- .coming-soon__countdown -->
+
+          <div class="coming-soon__wrapper">
+            <h1 class="coming-soon__title">We are coming soon</h1>
+            <p class="coming-soon__subtitle">Please Subscribe to be notified about further infomation</p>
+            <form class="coming-soon__form">
+              <input type="email" class="coming-soon__field" name="email" placeholder="Your Email" required>
+              <button type="submit" class="coming-soon__submit"><span class="ion-ios-arrow-thin-right coming-soon__submit-icon"></span></button>
+            </form><!-- coming-soon__form -->
+          </div><!-- .coming-soon__wrapper -->
+        </div><!-- .container -->
+      </main>
+      <footer class="footer--coming-soon">
+        <div class="container">
+          <ul class="footer__social footer__social--coming-soon">
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          </ul><!-- .footer__social -->
+        </div><!-- .container -->
+      </footer>
+    </div><!-- .coming-soon__container -->
+  </div><!-- .coming-soon__overlay -->
+</div><!-- .coming-soon -->

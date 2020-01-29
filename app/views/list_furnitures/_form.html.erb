@@ -1,0 +1,133 @@
+
+
+  
+
+
+
+
+<%= form_with(model: list_furniture, local: true) do |form| %>
+ 
+
+  <div class="col-md-9">
+   
+  <% if list_furniture.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(list_furniture.errors.count, "error") %> prohibited this list_furniture from being saved:</h2>
+
+    <ul>
+    <% list_furniture.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Add New Furniture</h3>
+       
+        <p>Name your art</p>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="submit-property__group">
+              <%= form.text_field :title, class: "submit-property__field", placeholder: "Furniture name", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+        <div class="row">
+            <div class="col-md-6">
+            <div class="submit-property__group">
+              <%= form.text_field :f_type, class: "submit-property__field", placeholder: "Type" , :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+            <div class="col-md-6">
+            <div class="submit-property__group">
+              <%= form.text_field :size, class: "submit-property__field", placeholder: "Size ( L x W)" , :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+           
+           
+            
+
+        </div><!-- .row -->
+
+        
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Set your price</h3>
+       
+        <div class="row">
+            <div class="col-md-4">
+            <div class="submit-property__group">             
+              <%= form.text_field :price , class: "submit-property__field", placeholder: "Price", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            <div class="col-md-4">
+            <div class="submit-property__group">             
+              <%= form.text_field :total_no , class: "submit-property__field", placeholder: "Total Number", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-md-8">
+            <div class="submit-property__group">   
+              <label for="property-title" class="submit-property__label">URL
+              </label>
+              <%= form.text_field :url , class: "submit-property__field", placeholder: "www.sample.com",  :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+        
+
+        
+    </div><!-- .submit-property__block -->
+
+
+   
+
+
+  
+
+
+    <div class="submit-property__block">
+        
+        <div class="row">
+            <div class="col-md-12">
+            <div class="submit-property__group">
+            <label for="submit-property-wysiwyg" class="submit-property__label">Material Description </label>
+            <%= form.text_area :material, id: "submit-property-wysiwyg", required: true %>
+            </div><!-- .submit-property__group -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+
+       
+        
+    </div><!-- .submit-property__block -->
+
+
+   
+  
+
+
+    <div class="actions">
+    <%= form.submit style: "    background: #ED4737;
+    color: white;"%>
+  </div>
+  </div>
+<% end %>
+
+
+
+
+
+

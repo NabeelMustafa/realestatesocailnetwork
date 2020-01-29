@@ -1,0 +1,42 @@
+<section class="my-property">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><a href="/" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="/profiles" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Profile</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">Art</span></li>
+    </ul>
+    <div class="my-profile__container">
+      <div class="row">
+      <%= render 'list_art_sidebar' %>
+        <div class="col-md-9">
+          <ul class="manage-list manage-list--my-property">
+            <li class="manage-list__header">
+              <span class="manage-list__title"><i class="fa fa-bookmark-o" aria-hidden="true"></i> My List</span>
+              <span class="manage-list__title"><i class="fa fa-calendar-o" aria-hidden="true"></i> Creation Date</span>
+            </li>
+            <% @list_arts.each do |list_art| %>
+              <li class="manage-list__item">
+              <div class="manage-list__item-container">
+                <div class="manage-list__item-img">
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place', class: 'listing__img'%>
+                </div><!-- manage-list__item-img -->
+          
+                <div class="manage-list__item-detail">
+                  <h3 class="listing__title"><a href="#"><%= list_art.art_name %></a></h3>
+                  <h6>$<%= list_art.price %></h6>
+                </div>
+              </div><!-- .manage-list__item-container -->
+              <div class="manage-list__expire-date"><%= list_art.created_at.to_date %></div>
+              
+              <div class="manage-list__action">
+                <td><%= link_to '<span class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>'.html_safe, edit_list_art_path(list_art) %></td>
+                <%= link_to '<span class="remove"><i class="fa fa-times" aria-hidden="true"></i>Remove</span>'.html_safe, list_art, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </li><!-- .manage-list__item" -->
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  

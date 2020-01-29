@@ -1,0 +1,38 @@
+<div class="submit-property__block">
+  <!-- Rounded switch -->
+  <div class="submit-property__group">
+      <label for="title" class="submit-property__label">Package Name *</label>
+      <%= f.text_field :name, class: "submit-property__field", placeholder: placeholder="Basic"%> 
+  </div>
+
+  <div class="row">
+      <div class="col-md-4">
+          <div class="submit-property__group">
+              <label for="property-price" class="submit-property__label">Price *</label>
+              <%= f.text_field :price, class: "submit-property__field"%>
+              <span class="submit-property__unit">USD</span>
+          </div><!-- .submit-property__group -->
+      </div><!-- .col -->                
+
+      <div class="col-md-4">
+        <div class="submit-property__group">
+            <label for="property-type" class="submit-property__label">Revisions *</label>
+            <%= f.select(:revisions, options_for_select((1..20), :selected => f.object.revisions), { :class => 'ht-field' }) %>
+        </div>
+      </div><!-- .col -->
+
+      <div class="col-md-4">
+        <div class="submit-property__group">
+            <label for="property-type" class="submit-property__label">Delivery Time(Days) *</label>
+            <%= f.select(:delivery_time, options_for_select((1..20), :selected => f.object.delivery_time), { :class => 'ht-field' }) %>
+        </div>
+      </div><!-- .col -->
+  </div><!-- .row -->
+
+  <div class="submit-property__group">
+      <label for="property-price" class="submit-property__label">Description *</label>
+      <%= f.text_area :description, class: "submit-property__field"%>
+      <span class="submit-property__unit"></span>
+  </div><!-- .submit-property__group -->
+
+</div><!-- .submit-property__block -->

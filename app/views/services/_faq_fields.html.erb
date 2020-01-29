@@ -1,0 +1,23 @@
+<div class="submit-property__block">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="submit-property__group">
+              <label for="property-price" class="submit-property__label">Question *</label>
+              <%= f.text_field :question, class: "submit-property__field"%>
+              <span class="submit-property__unit"></span>
+          </div><!-- .submit-property__group -->
+      </div><!-- .col -->                              
+
+  </div><!-- .row -->
+
+  <div class="row">
+      <div class="col-md-6">
+        <div class="submit-property__group">
+            <label for="property-price" class="submit-property__label">Answer *</label>
+            <%= f.text_area :answer, class: "submit-property__field"%>
+            <span class="submit-property__unit"></span>
+        </div><!-- .submit-property__group -->
+      </div><!-- .col -->                              
+
+  </div><!-- .row -->
+</div><!-- .submit-property__block -->

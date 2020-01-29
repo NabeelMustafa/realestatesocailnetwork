@@ -1,0 +1,112 @@
+<section class="bookmarked-listing">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Pages</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">My Bookmarked Listing</span></li>
+    </ul><!-- .ht-breadcrumb -->
+
+    <div class="bookmarked-listing__container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 class="bookmarked-listing__headline">Howdy, <strong>FelixDG!</strong></h2>
+          <div class="settings-block">
+            <span class="settings-block__title">Manage Account</span>
+            <ul class="settings">
+              <li class="setting"><a href="my_profile.html" class="setting__link"><i class="ion-ios-person-outline setting__icon"></i>My Profile</a></li>
+              <li class="setting setting--current"><a href="bookmarked_listing.html" class="setting__link"><i class="ion-ios-heart-outline setting__icon"></i>Bookmarked Listings</a></li>
+            </ul><!-- settings -->
+          </div><!-- .settings-block -->
+
+          <div class="settings-block">
+            <span class="settings-block__title">Manage Listing</span>
+            <ul class="settings">
+              <li class="setting"><a href="my_property.html" class="setting__link"><i class="ion-ios-home-outline setting__icon"></i>My Property</a></li>
+              <li class="setting"><a href="submit_property.html" class="setting__link"><i class="ion-ios-upload-outline setting__icon"></i>Submit New Property</a></li>
+              <li class="setting"><a href="package.html" class="setting__link"><i class="ion-ios-cart-outline setting__icon"></i>My Packages</a></li>
+            </ul><!-- settings -->
+          </div><!-- .settings-block -->
+
+          <div class="settings-block">
+            <ul class="settings">
+              <li class="setting"><a href="change_password.html" class="setting__link"><i class="ion-ios-unlocked-outline setting__icon"></i>Change Password</a></li>
+              <li class="setting"><a href="index.html" class="setting__link"><i class="ion-ios-undo-outline setting__icon"></i>Log Out</a></li>
+            </ul><!-- settings -->
+          </div><!-- .settings-block -->
+        </div><!-- .col -->
+
+        <div class="col-md-9">
+          <ul class="manage-list manage-list--bookmark">
+            <li class="manage-list__header">
+              <span class="manage-list__title"><i class="fa fa-bookmark-o" aria-hidden="true"></i> My bookmarked listings</span> 
+              <div class="manage-list__action">
+                <a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"></i> Remove All</a>
+              </div>
+            </li>
+            <li class="manage-list__item">
+              <div class="manage-list__item-container">
+                <div class="manage-list__item-img">
+                  <%= link_to property_path do %>
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place', class: 'listing__img'%>
+                  <% end %>
+                </div><!-- manage-list__item-img -->
+        
+                <div class="manage-list__item-detail">
+                  <h3 class="listing__title"><a href="single_property_1.html">Weston Hightpointe Place</a></h3>
+                  <p class="listing__location"><span class="ion-ios-location-outline listing__location-icon"></span> 157 West 57th St, 77 - Central Park South, NYC</p>
+                  <p class="listing__price">$2,285,500</p>
+                </div>
+              </div><!-- .manage-list__item-container -->
+
+              <div class="manage-list__action">
+                <a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
+              </div>
+            </li><!-- .manage-list__item" -->
+
+            <li class="manage-list__item">
+              <div class="manage-list__item-container">
+                <div class="manage-list__item-img">
+                  <%= link_to property_path do %>
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place', class: 'listing__img'%>
+                  <% end %>
+                </div><!-- manage-list__item-img -->
+          
+                <div class="manage-list__item-detail">
+                  <h3 class="listing__title"><a href="single_property_1.html">Weston Hightpointe Place</a></h3>
+                  <p class="listing__location"><span class="ion-ios-location-outline listing__location-icon"></span> 157 West 57th St, 77 - Central Park South, NYC</p>
+                  <p class="listing__price">$2,285,500</p>
+                </div>
+              </div><!-- .manage-list__item-container -->
+
+              <div class="manage-list__action">
+                <a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
+              </div>
+            </li><!-- .manage-list__item" -->
+
+            <li class="manage-list__item">
+              <div class="manage-list__item-container">
+                <div class="manage-list__item-img">
+                  <%= link_to property_path do %>
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place', class: 'listing__img'%>
+                  <% end %>
+                </div><!-- manage-list__item-img -->
+        
+                <div class="manage-list__item-detail">
+                  <h3 class="listing__title"><a href="single_property_1.html">Weston Hightpointe Place</a></h3>
+                  <p class="listing__location"><span class="ion-ios-location-outline listing__location-icon"></span> 157 West 57th St, 77 - Central Park South, NYC</p>
+                  <p class="listing__price">$2,285,500</p>
+                </div>
+              </div><!-- .manage-list__item-container -->
+
+              <div class="manage-list__action">
+                <a href="#" class="remove"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
+              </div>
+            </li><!-- .manage-list__item" -->
+          </ul>
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </div><!-- .bookmarked-listing__container -->
+  </div><!-- .container -->
+</section><!-- .bookmarked-listing -->
+
+<%= render 'partial/news_letter'%>

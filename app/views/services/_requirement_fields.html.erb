@@ -1,0 +1,23 @@
+<div class="submit-property__block">
+  <div class="submit-property__group">
+    <label for="property-price" class="submit-property__label">Description *</label>
+    <%= f.text_area :description, class: "submit-property__field"%>
+    <span class="submit-property__unit"></span>
+  </div><!-- .submit-property__group -->
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="submit-property__group">
+          <label for="property-price" class="submit-property__label">Type *</label>
+          <%= f.select(:requirement_type, options_for_select(["Text", "Multiple Choice"], :selected => f.object.requirement_type), {include_blank: false}, { :class => 'ht-field' }) %>
+          <span class="submit-property__unit"></span>
+      </div><!-- .submit-property__group -->
+    </div><!-- .col -->                
+
+  </div><!-- .row -->
+
+  <div class="submit-property__group">
+    <label for="submit-property-wysiwyg" class="submit-property__label">Mandatory *</label>
+    <%= f.check_box :is_mandatory, id: "submit-property-wysiwyg"%>
+  </div><!-- .submit-property__group -->
+</div><!-- .submit-property__block -->

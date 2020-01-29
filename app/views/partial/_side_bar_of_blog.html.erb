@@ -1,0 +1,112 @@
+<aside class="col-md-4 col-md-sidebar">
+  <section class="widget widget_search">
+    <form class="search-form" method="get" action="blog.html">
+      <input type="text" class="search-form__field" id="s" name="s" placeholder="Search...">
+      <button type="submit" class="search-form__submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+  </section><!-- .widget -->
+
+  <section class="widget widget_categories widget_list">
+    <h3 class="widget__title widget__title--uppercase">Categories</h3>
+    <ul>
+      <li><a href="#">Fashion</a><span>(05)</span></li>
+      <li><a href="#">Music</a><span>(10)</span></li>
+      <li><a href="#">Photography</a><span>(25)</span></li>
+      <li><a href="#">Game</a><span>(02)</span></li>
+      <li><a href="#">Lorem Ipsum</a><span>(25)</span></li>
+      <li><a href="#">Other</a><span>(02)</span></li>
+    </ul>
+  </section><!-- .widget -->
+
+  <section class="widget widget_thumbnail">
+    <h3 class="widget__title widget__title--uppercase">Newest</h3>
+    <ul class="widget_thumbnail__list">
+      <li class="widget_thumbnail__item">
+        <div class="widget_thumbnail__img">
+        <%= link_to blog_path do %>
+          <%= image_tag 'uploads/widget_thumbnail_1.jpg', alt: 'Arcte'%>
+        <% end %>
+        </div><!-- .widget_thumbnail-img -->
+        <div class="widget_thumbnail__content">
+          <h4 class="widget_thumbnail__title"><a href="#" class="widget_thumbnail__link">Arcte Beritatis et Quasi solar</a></h4>
+          <span class="widget_thumbnail__date">July 22, 2017</span>
+        </div><!-- .widget_thumbnail__content --> 
+      </li><!-- .widget_thumbnail__item -->
+
+      <li class="widget_thumbnail__item">
+        <div class="widget_thumbnail__img">
+          <%= link_to blog_path do %>
+            <%= image_tag 'uploads/widget_thumbnail_1.jpg', alt: 'Arcte'%>
+          <% end %>
+        </div><!-- .widget_thumbnail-img -->
+        <div class="widget_thumbnail__content">
+          <h4 class="widget_thumbnail__title"><a href="#" class="widget_thumbnail__link">Arcte Beritatis et Quasi solar</a></h4>
+          <span class="widget_thumbnail__date">July 22, 2017</span>
+        </div><!-- .widget_thumbnail__content --> 
+      </li><!-- .widget_thumbnail__item -->
+
+      <li class="widget_thumbnail__item">
+        <div class="widget_thumbnail__img">
+          <%= link_to blog_path do %>
+            <%= image_tag 'uploads/widget_thumbnail_1.jpg', alt: 'Arcte'%>
+          <% end %>
+        </div><!-- .widget_thumbnail-img -->
+        <div class="widget_thumbnail__content">
+          <h4 class="widget_thumbnail__title"><a href="#" class="widget_thumbnail__link">Arcte Beritatis et Quasi solar</a></h4>
+          <span class="widget_thumbnail__date">July 22, 2017</span>
+        </div><!-- .widget_thumbnail__content --> 
+      </li><!-- .widget_thumbnail__item -->
+    </ul><!-- widget_thumbnail__list -->
+  </section><!-- .widget -->
+
+  <section class="widget widget_archive widget_list">
+    <h3 class="widget__title widget__title--uppercase">Archive</h3>
+    <ul>
+      <li><a href="#">May 2017</a><span>(05)</span></li>
+      <li><a href="#">June 2017</a><span>(10)</span></li>
+      <li><a href="#">July 2017</a><span>(25)</span></li>
+      <li><a href="#">August 2017</a><span>(02)</span></li>
+    </ul>
+  </section><!-- .widget -->
+
+  <section class="widget widget_ads">
+    <%= image_tag 'uploads/widget_ads.jpg', alt: 'Ads'%>
+  </section><!-- .widget -->
+
+  <section class="widget widget_tag_cloud">
+    <h3 class="widget__title widget__title--uppercase">Tags</h3>
+    <div class="tag-cloud">
+      <a href="#" class="tag-cloud__item">Blog</a>
+      <a href="#" class="tag-cloud__item">Real Estate Blog</a>
+      <a href="#" class="tag-cloud__item">Clever</a>
+      <a href="#" class="tag-cloud__item">Estate</a>
+      <a href="#" class="tag-cloud__item">Felix</a>
+      <a href="#" class="tag-cloud__item">Clean</a>
+      <a href="#" class="tag-cloud__item">Clear Smooth</a>
+    </div><!-- .tag-cloud -->
+  </section><!-- .widget -->
+
+  <section class="widget widget_gallery">
+    <h3 class="widget__title widget__title--uppercase">Flickr</h3>
+    <ul>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_1.jpeg" alt="House"></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_2.jpeg" alt="House"></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_3.jpeg" alt="House"></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_4.jpeg" alt="House"></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_5.jpeg" alt="House"></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/uploads/flickr_6.jpeg" alt="House"></a>
+      </li>
+    </ul>
+  </section>
+</aside><!-- .col -->

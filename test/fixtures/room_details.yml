@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dish_washer: false
+  rang_oven: false
+  dryer: false
+  refrigerator: false
+  freezer: false
+  trash_compactor: false
+  garbage_disposal: false
+  washer: false
+  microwave: false
+  basement_type: MyString
+  floor_type: MyString
+
+two:
+  dish_washer: false
+  rang_oven: false
+  dryer: false
+  refrigerator: false
+  freezer: false
+  trash_compactor: false
+  garbage_disposal: false
+  washer: false
+  microwave: false
+  basement_type: MyString
+  floor_type: MyString

@@ -1,0 +1,11 @@
+
+
+<% if  (message.user.id == current_user.id)  %>
+    <div class="bubble me">
+    <%=message.content%>
+    </div>
+<% else %>
+    <div class="bubble you">
+      <%=message.content%>
+    </div>
+<% end %>

@@ -1,0 +1,123 @@
+<%= form_with(model: [@user, @service], local: true) do |form| %>
+  <div class="col-md-9">
+      <% if @service.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+          <ul>
+          <% @service.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="submit-property__block">
+          <h3 class="submit-property__headline">Basic Information</h3>
+          <div class="submit-property__group">
+              <label for="title" class="submit-property__label">Service Title *</label>
+              <%= form.text_field :title, class: "submit-property__field", placeholder: placeholder="I will clean your home", :required => true, :maxlength => 25, :size => 40%>
+              
+          </div>
+
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="submit-property__group">
+                      <label for="property-type" class="submit-property__label">Service Category *</label>
+                      <%= form.select(:category, options_for_select(["Assembly", "Carpet Cleaning", "Electrical", "House Cleaning", "HVAC", "Handyman", "IT", "Junk Removal", "Lawn Care","Moving", "Painting", "Plumbing", "Staging", "Photography", "Videography", "Inspectors"], :selected => form.object.category), {include_blank: false}, { :class => 'ht-field' }) %>
+                  </div>
+              </div><!-- .col -->
+
+              <div class="col-md-6">
+                  <div class="submit-property__group">
+                      <label for="property-price" class="submit-property__label">Tags *</label>
+                      <%= form.text_field :tags, class: "submit-property__field", required: true%>
+                      <span class="submit-property__unit"></span>
+                  </div><!-- .submit-property__group -->
+              </div><!-- .col -->
+          </div><!-- .row -->
+
+          <div class="submit-property__group">
+              <label for="submit-property-wysiwyg" class="submit-property__label">Description *</label>
+              <%= form.text_area :description, id: "submit-property-wysiwyg", required: true %>
+          </div><!-- .submit-property__group -->
+      </div><!-- .submit-property__block -->
+
+      <div class="submit-property__block">
+          <h3 class="submit-property__headline">Gallery or Video</h3>
+          
+          <div class="row">
+              <div class="col-md-5">
+                  <div class="submit-property__group">
+                      <label for="property-featured-image" class="submit-property__label">Featured Image *</label>
+                      <div class="submit-property__upload">
+                          <input type="file">
+                          <div class="submit-property__upload-inner">
+                              <span class="ion-ios-plus-outline submit-property__icon"></span>
+                              <span class="submit-property__upload-desc">Drop image here or click to upload</span>
+                          </div>
+                      </div><!-- .submit-proeprty__upload -->
+                  </div><!-- .submit-property__group -->
+              </div><!-- .col -->
+
+              <div class="col-md-7">
+                  <div class="submit-property__group">
+                      <label for="property-media" class="submit-property__label">All Images or Video </label>
+                      <div class="submit-property__upload">
+                          <input type="file" multiple>
+                          <div class="submit-property__upload-inner">
+                              <span class="ion-ios-plus-outline submit-property__icon"></span>
+                              <span class="submit-property__upload-desc">Drop all images here or click to upload</span>
+                          </div>
+                      </div><!-- .submit-proeprty__upload -->
+                  </div><!-- .submit-property__group -->
+              </div><!-- .col -->
+          </div><!-- .row -->
+      </div><!-- .submit-property__block -->
+
+      <h3 class="submit-property__headline">Packages
+        <span id="package-toggle" class="toggle">
+          <span class="toggle-switch"></span>
+        </span>
+      </h3>
+      <div id="packages" class="block-ianctive">
+        <%= form.fields_for :packages do |package| %>
+          <%= render 'package_fields', :f => package %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'Add another', form, :packages %>
+        </div>
+      </div>
+
+
+      <h3 class="submit-property__headline">Requirements
+        <span id="requirement-toggle" class="toggle">
+          <span class="toggle-switch"></span>
+        </span>
+      </h3>
+      <div id="requirements" class="block-ianctive">
+        <%= form.fields_for :requirements do |requirement| %>
+          <%= render 'requirement_fields', :f => requirement %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'Add another', form, :requirements %>
+        </div>
+      </div>
+
+      <h3 class="submit-property__headline">FAQs
+        <span id="faq-toggle" class="toggle">
+          <span class="toggle-switch"></span>
+        </span>
+      </h3>
+      <div id="faqs" class="block-ianctive">
+        <%= form.fields_for :faqs do |faq| %>
+          <%= render 'faq_fields', :f => faq %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'Add another', form, :faqs %>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-property__submit" style="background-color: #ED4737">Submit</button>
+
+  </div>
+<% end %>

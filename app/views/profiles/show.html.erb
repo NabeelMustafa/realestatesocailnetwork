@@ -1,0 +1,49 @@
+
+<div class="checkthat">
+
+<main class="profile">
+  <div class="profile-bg"></div>
+  <section class="container2">
+    <aside class="profile-image">
+          <%= link_to(chats_path(:other_user => @profile.user.id), method: :post, class: "camera" ) do %>
+            <i class="fas fa-envelope"></i>
+        <% end %>   
+      
+    </aside>
+    <section class="profile-info">
+      <h1 class="first-name"><%= @profile.first_name   %></h1>
+      <h1 class="second-name"><%= @profile.last_name   %></h1>
+      <h2>ABOUT</h2>
+      <p>
+      <%= @profile.about_me   %>
+      </p>
+
+      <aside class="social-media-icons">
+        <a href="https://<%= @profile.twitter_add   %>" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+        <a href="https://<%= @profile.facebook_add   %>" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+        <a href="https://<%= @profile.linkedin_add   %>" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+        </a>
+        <a href="tel:<%= @profile.ph_no   %>" target="_blank">
+                        <i class="fa fa-phone-square"></i>
+                    </a>
+      </aside>
+    </section>
+  </section>
+  <section class="statistics">
+  <a href="/profiles" class="icon arrow left"></a>
+  
+  <%= (current_user.profile[0].friend_lists.where(friend_id: @profile.id)[0]) ? (button_to "Remove Friend", { :controller => "profiles", :action => "remove_friend", :friend_id => @profile.id}) : (button_to "Add Friend", { :controller => "profiles", :action => "add_friend", :friend_id => @profile.id}) %>
+  
+    <p><strong><%= FriendList.where(friend_id: @profile.id).count%></strong> Total Friend</p>
+    <p><strong></strong> </p>
+  </section>
+  <button class="icon close"></button>
+</main>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="padding-bottom: 10px">
+    <div class="boxes">
+      <div class="box-img">
+        <img src="assets/MobileApps.png">
+      </div>
+      <div class="user-detail-main">
+        <div class="user-detail-img">
+          <img src="assets/MobileApps.png">
+        </div>
+        <div class="user-detail">
+          <a><h3><%= f.user.profile.first.first_name %></h3></a>
+          <p>Level 1 Seller</p>
+        </div>
+        <div class="user-detail-para">
+          <p><%= f.description %></p>
+        </div>
+        <div style="padding-top: 50px;">
+          <i class="fas fa-star" style="color: #ffbf00"></i> (5)
+        </div>
+      </div>
+      <div class="user-detail-footer">
+        <div class="heart-icon">
+          <i class="fas fa-heart" style="color: #c6c6c6"></i>
+          <i class="fas fa-bars" style="color: #c6c6c6"></i>
+        </div>
+        <div class="user-value">
+          <p>Starting At $ <%= f.packages.first.price%></p>
+        </div>
+      </div>
+    </div>
+</div>

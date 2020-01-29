@@ -1,0 +1,73 @@
+
+
+<%= form.fields_for :rental_listing_amenity_info, RentalListingAmenityInfo.new do |fact| %>
+  
+
+  <div class="submit-property__block">
+  <h3 class="submit-property__headline">Amenity info</h3>
+  <div class="submit-property__features">
+      <div class="submit-property__group">
+          
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :essentails, class: "submit-property__checkbox", id: "air-conditioning1" , placeholder: placeholder=""%>
+          <label for="air-conditioning1" class="submit-property__label submit-property__feature">Essentails</label>
+      </div>   
+         
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :air_conditioning, class: "submit-property__checkbox", id: "air-conditioning2" , placeholder: placeholder=""%>
+          <label for="air-conditioning2" class="submit-property__label submit-property__feature">air_conditioning</label>
+      </div>      
+
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :heat, class: "submit-property__checkbox", id: "air-conditioning31" , placeholder: placeholder=""%>
+          <label for="air-conditioning31" class="submit-property__label submit-property__feature">heat</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :hair_drryer, class: "submit-property__checkbox", id: "air-conditioning3" , placeholder: placeholder=""%>
+          <label for="air-conditioning3" class="submit-property__label submit-property__feature">hair_drryer</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :closet, class: "submit-property__checkbox", id: "air-conditioning4" , placeholder: placeholder=""%>
+          <label for="air-conditioning4" class="submit-property__label submit-property__feature">closet</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :iron, class: "submit-property__checkbox", id: "air-conditioning5" , placeholder: placeholder=""%>
+          <label for="air-conditioning5" class="submit-property__label submit-property__feature">iron</label>
+      </div>      
+
+
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :tv, class: "submit-property__checkbox", id: "air-conditioning6" , placeholder: placeholder=""%>
+          <label for="air-conditioning6" class="submit-property__label submit-property__feature">tv</label>
+      </div>
+      
+      <div class="submit-property__wrapper">
+          <%= fact.check_box :breakfast, class: "submit-property__checkbox", id: "air-conditioning7" , placeholder: placeholder=""%>
+          <label for="air-conditioning7" class="submit-property__label submit-property__feature">breakfast</label>
+      </div>
+
+
+      <div class="submit-property__wrapper">
+      <%= fact.check_box :wifi, class: "submit-property__checkbox", id: "air-conditioning8" , placeholder: placeholder=""%>
+      <label for="air-conditioning8" class="submit-property__label submit-property__feature">Wifi</label>
+    </div>
+      
+
+      
+      </div><!-- .submit-property__group -->
+  </div><!-- .submit-property__features -->
+</div><!-- .submit-property__block -->
+  
+<% end %>
+
+

@@ -1,0 +1,114 @@
+.boxes-main-body {
+  width: 100%;
+  float: left;
+}
+
+.boxes {
+  width: 97%;
+  float: left;
+  background: #fafafa;
+  border: 1px solid #c1c1c1;
+  margin-right: 3%;
+}
+.boxes:last-child {
+  margin-right: 0;
+}
+
+.box-img {
+  width: 100%;
+  height: 200px;
+}
+
+.box-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-detail-main {
+  width: 94%;
+  float: left;
+  padding: 10px;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.user-detail-img {
+  width: 20%;
+  float: left;
+}
+
+.user-detail-img img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.user-detail {
+  width: 80%;
+  float: left;
+}
+
+.user-detail h3 {
+  font-size: 14px;
+  line-height: 23px;
+  margin: 0;
+  font-family: sans-serif;  
+}
+
+.user-detail p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  font-family: sans-serif;  
+}
+
+.user-detail-para {
+  width: 100%;
+  float: left;  
+}
+
+
+.user-detail-para p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  font-family: sans-serif;  
+}
+
+.user-detail-footer {
+  width: 94%;
+  float: left;
+  padding: 10px;
+}
+
+.heart-icon {
+  float: left;
+}
+
+.heart-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-value {
+  width: 80%;
+  float: left;
+  text-align: right;
+}
+
+.user-value p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+
+
+@media only screen and (max-width: 678px) {
+  .boxes {
+    width: 100%;
+    float: left;    
+    margin-right: 0;
+    margin: 0 10px;
+  }
+}

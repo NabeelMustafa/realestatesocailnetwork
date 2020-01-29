@@ -1,0 +1,297 @@
+<%= form_with(model: list_sell, local: true) do |form| %>
+ 
+
+  <div class="col-md-9">
+   
+    <% if list_sell.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(rental_list.errors.count, "error") %> prohibited this rental_list from being saved:</h2>
+
+        <ul>
+        <% rental_list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Address of your property</h3>
+       
+        <p>Simplfiy the Address</p>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="submit-property__group">
+              <%= form.text_field :address, class: "submit-property__field", placeholder: "Street Adress", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+        <div class="row">
+            <div class="col-md-3">
+            <div class="submit-property__group">
+              <%= form.text_field :unit, class: "submit-property__field", placeholder: "Unit number (optional)"  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+            <div class="col-md-3">
+            <div class="submit-property__group">
+              <%= form.text_field :city, class: "submit-property__field", placeholder: "city"  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+           
+            <div class="col-md-3">
+            <div class="submit-property__group">
+              <%= form.text_field :state, class: "submit-property__field", placeholder: "State"  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-3">
+            <div class="submit-property__group">
+              <%= form.text_field :zip, class: "submit-property__field", placeholder: "Zip code"  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+
+        
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Set your price</h3>
+       
+        <div class="row">
+            <div class="col-md-4">
+            <div class="submit-property__group">             
+              <%= form.text_field :price , class: "submit-property__field", placeholder: "Price", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-md-8">
+            <div class="submit-property__group">   
+              <label for="property-title" class="submit-property__label">Virtual tour URL
+              </label>
+              <%= form.text_field :virtual_tour_link , class: "submit-property__field", placeholder: "www.sample.com" %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+        
+
+        
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Home Facts</h3>
+       
+        <div class="row">
+          <div class="col-md-6">
+            <div class="submit-property__group">
+              <label for="property-title" class="submit-property__label">Home Type
+              </label>
+              <%= form.select(:home_type, options_for_select([["Condo ", "condo"], ["Multi Family", "mf"], ["Appartment", "app"], ["Single Family", "sf"], ["Vacant Land", "vc"]], :selected => form.object.home_type), {include_blank: false}, { :class => 'ht-field' }) %>
+              </div>
+          </div><!-- .col -->
+          <div class="col-md-6">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">HOA Dues
+            </label>
+            <%= form.text_field :hoa_dues , class: "submit-property__field", placeholder: "dues" %>
+          </div><!-- .col -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">Beds
+            </label>
+            <%= form.text_field :no_bed , class: "submit-property__field", placeholder: "# of bed" %>
+              </div>
+          </div><!-- .col -->
+          <div class="col-md-3">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">Basement Area
+            </label>
+            <%= form.text_field :basement_area , class: "submit-property__field", placeholder: "" %>
+            </diV>
+          </div><!-- .col -->
+          <div class="col-md-3">
+          <div class="submit-property__group">
+          <label for="property-title" class="submit-property__label">Garage Area
+          </label>
+          <%= form.text_field :garage_area , class: "submit-property__field", placeholder: "" %>
+          </diV>
+        </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">Full Baths
+            </label>
+            <%= form.text_field :no_f_bath , class: "submit-property__field", placeholder: "# of full Bath" %>
+              </div>
+          </div><!-- .col -->
+
+          <div class="col-md-3">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">1/4 Baths
+            </label>
+            <%= form.text_field :no_q_bath , class: "submit-property__field", placeholder: "# of 1/4 Bath" %>
+              </div>
+          </div><!-- .col -->
+
+
+          <div class="col-md-3">
+            <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">1/2 Baths
+            </label>
+            <%= form.text_field :no_h_bath , class: "submit-property__field", placeholder: " # of 1/2 Bath" %>
+            </diV>
+          </div><!-- .col -->
+
+          
+        </div><!-- .row -->
+
+
+
+        <div class="row">
+        <div class="col-md-6">
+          <div class="submit-property__group">
+          <label for="property-title" class="submit-property__label">Finished square feet
+          </label>
+          <%= form.text_field :finished_sq , class: "submit-property__field", placeholder: "In sq meter" %>
+            </div>
+        </div><!-- .col -->
+
+        <div class="col-md-6">
+          <div class="submit-property__group">
+          <label for="property-title" class="submit-property__label">Lot Size
+          </label>
+          <%= form.text_field :lot_size , class: "submit-property__field", placeholder: "In sq meter" %>
+            </div>
+        </div><!-- .col -->
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="submit-property__group">
+          <label for="property-title" class="submit-property__label">Year built
+          </label>
+          <%= form.text_field :year_built , class: "submit-property__field", placeholder: "In sq meter" %>
+            </div>
+        </div><!-- .col -->
+
+        <div class="col-md-6">
+          <div class="submit-property__group">
+          <label for="property-title" class="submit-property__label">Structural remodel year 
+          </label>
+          <%= form.text_field :remodel_year , class: "submit-property__field", placeholder: "In sq meter" %>
+            </div>
+        </div><!-- .col -->
+      </div><!-- .row -->
+
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Images Details</h3>
+        <%= render :partial =>'rental_images', :locals=>{:form=>form}  %>
+        </div><!-- .submit-property__block -->
+
+
+    
+    
+        <div class="submit-property__block">
+    <h3 class="submit-property__headline">Rooms detail</h3>
+
+        <%= render :partial =>'room_details', :locals=>{:form=>form}  %>
+
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+    <h3 class="submit-property__headline">Visiting Details</h3>
+
+        <%= render :partial =>'timming', :locals=>{:form=>form}  %>
+
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Additinal Information</h3>
+       
+        <div class="row">
+            <div class="col-md-4">
+            <div class="submit-property__group">    
+            <label for="property-title" class="submit-property__label">Add title
+              </label>         
+              <%= form.text_field :my_views , class: "submit-property__field", placeholder: "", :required => true  %>
+            </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+            
+
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-md-12">
+            <div class="submit-property__group">
+            <label for="submit-property-wysiwyg" class="submit-property__label">Description </label>
+            <%= form.text_area :description, id: "submit-property-wysiwyg", required: true %>
+            </div><!-- .submit-property__group -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="col-md-12">
+        <div class="submit-property__group">    
+        <label for="property-title" class="submit-property__label">Related Website
+          </label>         
+          <%= form.text_field :website , class: "submit-property__field", placeholder: "www.sample.com"  %>
+        </div><!-- .submit-property__group -->
+        </div><!-- .col -->
+        
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+      <h3 class="submit-property__headline">Contact Info</h3>
+    
+      <div class="row">
+          <div class="col-md-4">
+          <div class="submit-property__group">    
+          <label for="property-title" class="submit-property__label">Add Phone Number
+            </label>         
+            <%= form.text_field :ph_no , class: "submit-property__field", placeholder: "2132 - 123 - 123", :required => true  %>
+          </div><!-- .submit-property__group -->
+          </div><!-- .col -->
+          
+
+      </div><!-- .row -->
+      </div><!-- .submit-property__block -->
+  
+
+
+    <div class="actions">
+    <%= form.submit style: "    background: #ED4737;
+    color: white;"%>
+  </div>
+  </div>
+<% end %>
+
+
+
+
+
+

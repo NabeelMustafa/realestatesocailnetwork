@@ -1,0 +1,45 @@
+<section class="my-property">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Pages</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">My Profile</span></li>
+    </ul>
+    <div class="my-profile__container">
+      <div class="row">
+        <%= render 'partial/profile_sidebar' %>
+        <div class="col-md-9">
+          <ul class="manage-list manage-list--my-property">
+            <li class="manage-list__header">
+              <span class="manage-list__title"><i class="fa fa-bookmark-o" aria-hidden="true"></i> My Property</span>
+              <span class="manage-list__title"><i class="fa fa-calendar-o" aria-hidden="true"></i> Creation Date</span>
+            </li>
+
+            <% @properties.each do |property| %>
+              <li class="manage-list__item">
+              <div class="manage-list__item-container">
+                <div class="manage-list__item-img">
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place', class: 'listing__img'%>
+                </div><!-- manage-list__item-img -->
+          
+                <div class="manage-list__item-detail">
+                  <h3 class="listing__title"><a href="<%= property_path(property) %>"><%= property.title %></a></h3>
+                  <p class="listing__location"><span class="ion-ios-location-outline listing__location-icon"><%= property.friendly_address %></span> </p>
+                  <p class="listing__price"><%= property.property_price %></p>
+                </div>
+              </div><!-- .manage-list__item-container -->
+              <div class="manage-list__expire-date"><%= property.created_at.to_date %></div>
+              
+              <div class="manage-list__action">
+                <td><%= link_to '<span class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>'.html_safe, edit_property_path(property) %></td>
+                <%= link_to '<span class="remove"><i class="fa fa-times" aria-hidden="true"></i>Remove</span>'.html_safe, property, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </li><!-- .manage-list__item" -->
+            <% end %>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @list_furniture.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @list_furniture.price %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @list_furniture.url %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @list_furniture.type %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @list_furniture.size %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @list_furniture.material %>
+</p>
+
+<p>
+  <strong>Total no:</strong>
+  <%= @list_furniture.total_no %>
+</p>
+
+<%= link_to 'Edit', edit_list_furniture_path(@list_furniture) %> |
+<%= link_to 'Back', list_furnitures_path %>

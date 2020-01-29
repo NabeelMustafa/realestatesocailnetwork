@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  essentails: false
+  air_conditioning: false
+  heat: false
+  hair_drryer: false
+  closet: false
+  iron: false
+  tv: false
+  breakfast: false
+  wifi: false
+  fire_ex: false
+  carbon_det: false
+  smoke_det: false
+  first_aid: false
+
+two:
+  essentails: false
+  air_conditioning: false
+  heat: false
+  hair_drryer: false
+  closet: false
+  iron: false
+  tv: false
+  breakfast: false
+  wifi: false
+  fire_ex: false
+  carbon_det: false
+  smoke_det: false
+  first_aid: false

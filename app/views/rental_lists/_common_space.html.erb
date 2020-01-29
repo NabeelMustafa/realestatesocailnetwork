@@ -1,0 +1,19 @@
+
+
+<div class="submit-property__group">
+<label for="property-featured-image" class="submit-property__label">Common Spaces *</label>
+<div class="submit-property__upload">
+<%= form.add_nested_fields_link :rental_listing_common_spaces , "Add Common Space"%>
+
+</div><!-- .submit-proeprty__upload -->
+</div><!-- .submit-property__group -->
+
+
+<%= form.nested_fields_for :rental_listing_common_spaces do |ff| %>
+    
+  <div class="submit-property__group">
+    <%= ff.select(:space_type, options_for_select([["Sofa Bed", "sofs"], ["Couch", "couch"], ["Mattress", "mattress"]], :selected => ff.object.space_type), {include_blank: false}, { :class => 'ht-field' }) %>
+  </div>
+      <%= ff.remove_nested_fields_link 'Remove',method: :delete, class: 'btn btn-primary', role: 'button'%>
+  
+  <% end %>

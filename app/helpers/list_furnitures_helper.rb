@@ -1,0 +1,2 @@
+module ListFurnituresHelper
+end

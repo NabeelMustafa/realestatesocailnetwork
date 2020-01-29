@@ -1,0 +1,50 @@
+<section class="main-listing">
+  
+  <div class="main-listing__main">
+    <div class="container">
+      <div class="row">
+        <section class="homes">
+        <div class="container">
+          
+          </div>
+          <div class="homes-data">
+            <div class="row">
+              <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                <div class="home-box" style="background: #EC4836;">
+                  <%= image_tag "ListSell.png" %>
+                  <h5 style="color: white;"> SELL </h5>
+                  <p style="color: white;"> Sell your home with RESN and one of our local and licensed agents will properly guide you thru the transaction.                  </p>
+                  <a href="<%= new_list_sell_path %>" style=" background:#006aff;
+                  border:1px solid #006aff;
+                  color:white;"> SELL</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                <div class="home-box" style="background: #EC4836;">
+                 <%= image_tag "ListRental.png" %>
+                  <h5 style="color: white;"> RENT</h5>
+                  <p style="color: white;"> Sell your home with an agent and one of our local and licensed agents will properly guide you thru the transaction.</p>
+                  <a href="<%= new_rental_list_path%>" style=" background:#006aff;
+                  border:1px solid #006aff;
+                  color:white;"> RENT </a>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+                <div class="home-box" style="background: #EC4836;">
+                  <%= image_tag "ListService1.png" %>
+                  <h5 style="color: white;"> SERVICE</h5>
+                  <p style="color: white;"> Sell your home by owner and one of our local and licensed agents will properly guide you thru the transaction.</p>
+                  <a href="<%= @user.present? ? new_user_service_path(@user) : "users/sign_in" %>"  style=" background:#006aff;
+                  border:1px solid #006aff;
+                  color:white;"> SERVICE </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </div><!-- row -->
+    </div><!-- .container -->
+  </div><!-- .main-listing__main -->
+</section><!-- .main-listing -->

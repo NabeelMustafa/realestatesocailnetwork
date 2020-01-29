@@ -1,0 +1,264 @@
+
+
+<section class="blog_banner">
+<div class="container">
+  <div class="agent-banner-text" >
+    <h5>Blog</h5>
+
+  </div>
+  <div class="banner-input" style="margin-top">
+  <div class="listing-sort listing-sort--main-listing" style="width: 50%;float: left; border-radius: 6px; border: 2px solid white; background: transparent; padding: 0px; visibility: hidden;">
+  <input type="submit" value="" class="main-listing__form-field agent-submit" style="width: 10% ;float:right">   
+  <input type="text" id="search_agent" class="main-listing__form-field " placeholder="Search by Name or Location..." style="width: 100% ;float:right; background: transparent; color: white!;">  
+  <div class="listing-sort__inner" style="float:left;margin: 0px; width: 25%; padding: 0px;">
+    <p class="listing-sort__sort">
+     
+    </p><!-- .listing-sort__sort -->
+  </div><!-- .listing-sort__inner -->
+</div><!-- .listing-sort -->
+
+  </div>
+  
+
+</div>
+</section>
+
+
+<section class="blog">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><%= link_to "Home", root_path, class: 'ht-breadcrumbs__link ht-breadcrumbs__title' %></li>
+      <li class="ht-breadcrumbs__item"><%= link_to "Pages", root_path, class: 'ht-breadcrumbs__link ht-breadcrumbs__title' %></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">Blog</span></li>
+    </ul><!-- ht-breadcrumb -->
+
+    <div class="blog__main">
+      <div class="row">
+        <main class="col-md-8 col-md-main">
+          <div class="row">
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %> 
+                  
+                  <span class="item__label">Pinned</span>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %>
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %> 
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+
+            <div class="col-md-6">
+              <article class="news__single--v2 news__single--b-margin">
+                <div class="news__thumbnail">
+                  <%= link_to single_blog_path  do %>
+                    <div class="news__thumbnail-overlay"></div><!-- .news__thumbnail-overlay -->
+                    <%= image_tag 'uploads/news_1.jpg', alt: 'News'%>
+                  <% end %> 
+                </div><!-- .news_thumbnail -->
+    
+                <div class="news__content">
+                  <div class="news__body">
+                    <span class="news__meta news__meta-time"><span class="ion-ios-calendar-outline"></span> July 21, 2017</span>
+                    <h3 class="news__title"><%= link_to "Releases 2Q 2017 Tokyo, Japan", single_blog_path %></h3>
+                    <p class="news__excerpt news__excerpt--v2">The upper level has three bedrooms, with the main bedroom having built-in wardrobes and an ensuite with his-and-hers sinks, underfloor heating and shower dosis...</p>
+                  </div><!-- .news__body -->
+    
+                  <div class="news__footer">
+                    <span class="news__meta news__meta-comments"><span class="ion-ios-chatboxes-outline"></span> 3 Comment(s)</span>
+                    <%= link_to single_blog_path, class: 'news__readmore' do %>
+                      <span>&plus; Read More</span>
+                    <% end %>
+                  </div><!-- .news__footer -->
+                </div><!-- .news__content -->
+              </article><!-- news__single--v2 -->
+            </div><!-- .col -->
+          </div><!-- .row -->
+
+          <ul class="pagination pagination--t-margin pagination--b-margin">
+            <li class="pagination__item">
+              <a href="#" class="pagination__link pagination__link_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            </li>
+            <li class="pagination__item"><a href="#" class="pagination__link pagination__link--selected">1</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link pagination__link_next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+          </ul><!-- pagination -->
+        </main><!-- .col -->
+        <%= render 'partial/side_bar_of_blog' %>
+      </div><!-- .row -->
+    </div><!-- .blog__main -->
+  </div><!-- .container -->
+</section><!-- .blog -->

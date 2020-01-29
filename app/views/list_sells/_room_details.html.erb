@@ -1,0 +1,97 @@
+
+
+
+
+
+
+
+
+<div class="submit-property__group">
+<label for="property-featured-image" class="submit-property__label">Add you rooms here </label>
+<div class="submit-property__upload">
+<%= form.add_nested_fields_link :room_details , "Add Room"%>
+
+</div><!-- .submit-proeprty__upload -->
+</div><!-- .submit-property__group -->
+
+
+<%= form.nested_fields_for :room_details do |ff| %>
+
+  <div class="row">
+  <div class="col-md-12">
+      <div class="submit-property__group">
+      <label for="property-title" class="submit-property__label">Room Type
+      </label>   
+          <%= ff.select(:room_type, options_for_select([["Bed room", "bd"], ["Master bed Room", "mbr"], ["office", "office"], ["Kitchen", "k"], ["Workshop", "ws"], ["other", "other"]], :selected => ff.object.room_type), {include_blank: false}, { :class => 'ht-field' }) %>
+      </div>
+  </div><!-- .col -->
+  </div>
+  <div class="submit-property__group">
+          <h6>Room Appliance</h6>
+          <br/>
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :dish_washer, class: "submit-property__checkbox", id: "air-conditioning" , placeholder: placeholder=""%>
+          <label for="air-conditioning1" class="submit-property__label submit-property__feature">Dish washer</label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :rang_oven, class: "submit-property__checkbox", id: "air-conditioning11" , placeholder: placeholder=""%>
+          <label for="air-conditioning11" class="submit-property__label submit-property__feature"> Range oven</label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :dryer, class: "submit-property__checkbox", id: "air-conditioning12" , placeholder: placeholder=""%>
+          <label for="air-conditioning12" class="submit-property__label submit-property__feature"> Dryer</label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :refrigerator, class: "submit-property__checkbox", id: "air-conditioning13" , placeholder: placeholder=""%>
+          <label for="air-conditioning13" class="submit-property__label submit-property__feature"> Refrigreator</label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :freezer, class: "submit-property__checkbox", id: "air-conditioning14" , placeholder: placeholder=""%>
+          <label for="air-conditioning14" class="submit-property__label submit-property__feature"> Freezer</label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+          <%= ff.check_box :trash_compactor, class: "submit-property__checkbox", id: "air-conditioning15" , placeholder: placeholder=""%>
+          <label for="air-conditioning15" class="submit-property__label submit-property__feature"> Trash Compactor </label>
+      </div> 
+
+      <div class="submit-property__wrapper">
+      <%= ff.check_box :garbage_disposal, class: "submit-property__checkbox", id: "air-conditioning16" , placeholder: placeholder=""%>
+      <label for="air-conditioning16" class="submit-property__label submit-property__feature">Garbage Disposal </label>
+        </div> 
+
+
+        <div class="submit-property__wrapper">
+        <%= ff.check_box :washer, class: "submit-property__checkbox", id: "air-conditioning17" , placeholder: placeholder=""%>
+        <label for="air-conditioning17" class="submit-property__label submit-property__feature"> washer</label>
+      </div>
+
+    </div>
+
+    <div class="row">
+  <div class="col-md-12">
+      <div class="submit-property__group">
+      <label for="property-title" class="submit-property__label">Basement Type
+      </label>   
+          <%= ff.select(:basement_type, options_for_select([["Finished", "f"], ["Partially Finished", "pf"], ["none", "none"]], :selected => ff.object.basement_type), {include_blank: false}, { :class => 'ht-field' }) %>
+      </div>
+  </div><!-- .col -->
+  </div>
+  <div class="row">
+  <div class="col-md-12">
+      <div class="submit-property__group">
+      <label for="property-title" class="submit-property__label">Floor Covering
+      </label>   
+          <%= ff.select(:floor_type, options_for_select([["Carpet", "carpet"], ["Slate ", "slate"], ["Wood", "wood"],  ["other", "other"]], :selected => ff.object.floor_type), {include_blank: false}, { :class => 'ht-field' }) %>
+      </div>
+  </div><!-- .col -->
+  </div>
+ 
+  <%= ff.remove_nested_fields_link 'Remove',method: :delete, class: 'btn btn-primary', role: 'button'%>
+<% end %>
+
+<br/>

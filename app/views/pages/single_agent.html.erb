@@ -1,0 +1,60 @@
+<section class="single agents-single">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border ht-breadcrumbs--b-margin">
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Agent</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">Agent Single</span></li>
+    </ul><!-- ht-breadcrumb -->
+
+    <div class="single__wrapper agents-single__wrapper">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="single__inner agents-single__inner">
+            <div class="single__avatar agents-single__avatar">
+              <%= image_tag 'uploads/michael_beckle.jpg', alt: 'Michael Beckle'%>
+            </div><!-- .agents-single__avatar -->
+
+            <div class="single__detail agents-single__detail">
+              <h3 class="agents-single__name">Michael Beckle</h4>
+              <span class="famous-agents__position">President | Realand®</span>
+              <ul class="famous-agents__contact agents-single__contact">
+                <li class="famous-agents__phone"><i class="fa fa-phone fa-fw" aria-hidden="true"></i><a href="tel:+3104326507">(310) 432 6507</a></li>
+                <li class="famous-agents__email"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i><a href="mailto:michael-druc@domain.com">Michael-druc@domain.com</a></li>
+              </ul>
+              <ul class="agency__social agents-single__social">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+              </ul>
+              <p class="agents-single__desc">
+                For me, it's not so much about chasing a commission on a one-time deal as keeping a happy client for a lifetime. One of my most memorable transactions and proudest moments as a Realand was when I negotiated a deal with a seller to work with my buyers while I listed their current home. I help the buyer and his pregnant wife get their new home 2 weeks after that. This was also during the holidays when lenders and title companies normally take long to close transactions. My clients were happy to move into their new home just in time for their new baby!
+              </p>
+            </div><!-- .agents-single__detail -->
+          </div><!-- agents-single__inner -->
+        </div><!-- .col -->
+
+        <div class="col-md-3">
+          <form class="contact-form contact-form--bordered agents-single__contact-from">
+            <div class="contact-form__header">
+              <h3 class="contact-form__title">Contact Michael Beckle</h3>
+            </div><!-- .contact-form__header -->
+            <div class="contact-form__body">
+              <input type="text" class="contact-form__field" placeholder="Name" name="name" required>
+              <input type="email" class="contact-form__field" placeholder="Email" name="email" required>
+              <input type="tel" class="contact-form__field" placeholder="Phone number" name="phone number">
+              <textarea class="contact-form__field contact-form__comment" cols="30" rows="4" placeholder="Comment" name="comment" required></textarea>
+              
+            </div><!-- .contact-form__body -->
+            <div class="contact-form__footer">
+              <input type="submit" class="contact-form__submit" name="submit" value="Contact Agent">
+            </div><!-- .contact-form__footer -->
+          </form><!-- .contact-form -->
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </div><!-- .agents-single__wrapper -->
+  </div><!-- .container -->
+</section><!-- .agents-single -->
+
+<%= render 'partial/item_grid' %>
+<%= render 'partial/news_letter'%

@@ -1,0 +1,179 @@
+<%= form_with(model: rental_list, local: true) do |form| %>
+ 
+
+  <div class="col-md-9">
+   
+    <% if rental_list.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(rental_list.errors.count, "error") %> prohibited this rental_list from being saved:</h2>
+
+        <ul>
+        <% rental_list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Basic Information</h3>
+        <div class="submit-property__group">
+            <label for="property-title" class="submit-property__label">Listing Title *</label>
+            <%= form.text_field :title, class: "submit-property__field", placeholder: placeholder="House for rent", :required => true%>
+            
+        </div>
+        <p>What kind of place do you have?</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <%= form.select(:room_type, options_for_select([["Entire Room", "entire_place"], ["Private Room", "private_room"], ["Shared Room", "shared_room"]], :selected => form.object.room_type), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div>
+            </div><!-- .col -->
+            
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                  <%= form.select(:person_capicty, options_for_select([["1", "1"], ["2", "2"], [" 3", "3"], [" 4", "4"], [" 4+", "5"]], :selected => form.object.person_capicty), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div>
+            </div><!-- .col -->
+
+        </div><!-- .row -->
+
+        <div class="submit-property__group">
+            <%= form.text_field :location, class: "submit-property__field", placeholder: placeholder="USA", :required => true%>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                <label for="property-title" class="submit-property__label">Property Type *</label>
+                <%= form.select(:propert_type, options_for_select([["Appartment", "appartment"], ["House", "house"], [" Unit", "unit"]], :selected => form.object.propert_type), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-room" class="submit-property__label">Property Type Cat *</label>
+                    <%= form.select(:property_type_cat, options_for_select([["Condo", "condo"], ["Loft", "loft"], ["Serviced Appartment", "s_app"]], :selected => form.object.property_type_cat), {include_blank: false}, { :class => 'ht-field' }) %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="submit-property__group">
+            <p></p>
+            <div class="submit-property__wrapper">
+                <%= form.check_box :is_dedicated, class: "submit-property__checkbox", id: "air-conditioning" , placeholder: placeholder="House for rent"%>
+                <label for="air-conditioning" class="submit-property__label submit-property__feature">Is this set up as a dedicated guest space?</label>
+            </div> 
+        </div><!-- .submit-property__group -->
+
+        <div class="submit-property__group">
+            <p>How many guests can your place accommodate?</p>
+            <%= form.text_field :guest_no_acc, class: "submit-property__field", placeholder: placeholder="", :required => false%>
+        </div>
+
+        <div class="submit-property__group">
+            <p>How many beds can guests use?            </p>
+            <%= form.text_field :beedrooms_guest_use, class: "submit-property__field", placeholder: placeholder="", :required => true%>
+        </div>
+
+        <div class="submit-property__group">
+            <p>How many beds can guests use?
+            </p>
+            <%= form.text_field :bathrooms_guest_no, class: "submit-property__field", placeholder: placeholder="", :required => true%>
+        </div>
+
+
+        <div class="submit-property__group">
+            <label for="submit-property-wysiwyg" class="submit-property__label">Description *</label>
+            <%= form.text_area :description, id: "submit-property-wysiwyg", required: true %>
+        </div><!-- .submit-property__group -->
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Images</h3>
+        
+        
+        <%= render :partial =>'rental_image', :locals=>{:form=>form}  %>
+
+    </div><!-- .submit-property__block -->
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Location</h3>
+
+        <div class="submit-property__group">
+            <label for="property-address" class="submit-property__label">Address</label>
+            <%= form.text_field :address, class: "submit-property__field"  %>
+        </div><!-- .submit-property__group -->
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-longtitude" class="submit-property__label">City</label>
+                    <%= form.text_field :city, class: "submit-property__field" %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-latitude" class="submit-property__label">State</label>
+                    <%= form.text_field :state, class: "submit-property__field" %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+            <div class="col-md-4">
+                <div class="submit-property__group">
+                    <label for="property-latitude" class="submit-property__label">Postal Code</label>
+                    <%= form.text_field :postal_code, class: "submit-property__field" %>
+                </div><!-- .submit-property__group -->
+            </div><!-- .col -->
+
+        </div><!-- .row -->
+
+        <div class="submit-property__group">
+        <label for="property-address" class="submit-property__label">Country</label>
+        <%= form.text_field :country, class: "submit-property__field"  %>
+    </div><!-- .submit-property__group -->
+    </div><!-- .submit-property__block -->
+
+    
+
+   
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Bed rooms</h3>
+        
+        
+        <%= render :partial =>'room_form', :locals=>{:form=>form}  %>
+
+    </div><!-- .submit-property__block -->
+
+
+    <div class="submit-property__block">
+        <h3 class="submit-property__headline">Common Spaces</h3>
+        
+        
+    <%= render :partial =>'common_space', :locals=>{:form=>form}  %>
+
+    </div><!-- .submit-property__block -->
+
+
+
+  <%= render :partial =>'space_usage', :locals=>{:form=>form}  %>
+  
+
+  <%= render :partial =>'amenity_info', :locals=>{:form=>form}  %>
+
+
+    <div class="actions">
+    <%= form.submit style: "    background: #ED4737;
+    color: white;"%>
+  </div>
+<% end %>
+
+
+
+</div>
+
+
+
+

@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+<div class="submit-property__group">
+<label for="property-featured-image" class="submit-property__label">Beds *</label>
+<div class="submit-property__upload">
+<%= form.add_nested_fields_link :rental_listing_bedrooms , "Add Bedroom"%>
+
+
+</div><!-- .submit-proeprty__upload -->
+</div><!-- .submit-property__group -->
+
+
+
+<%= form.nested_fields_for :rental_listing_bedrooms do |ff| %>
+
+  <div class="submit-property__block">
+  <div class="submit-property__group">
+
+  <%= ff.select(:room_type, options_for_select([["Double", "d"], ["Queen", "q"], ["Single", "s"]], :selected => ff.object.room_type), {include_blank: false}, { :class => 'ht-field' }) %>
+  </div>
+  </div>
+      <%= ff.remove_nested_fields_link 'Remove',method: :delete, class: 'btn btn-primary', role: 'button'%>
+  
+  <% end %>
+  
+

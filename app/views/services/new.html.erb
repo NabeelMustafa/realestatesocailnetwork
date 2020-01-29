@@ -1,0 +1,33 @@
+<% if can? :manage, @service %>
+  <section class="my-property">
+    <div class="container">
+      <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+        <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+        <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Pages</span></a></li>
+        <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">My Profile</span></li>
+      </ul>
+      <div class="my-profile__container">
+        <div class="row">
+          <%= render 'listing_sidebar' %>
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% else %>
+  <section class="my-property">
+    <div class="container">
+      <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+        <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+        <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Pages</span></a></li>
+        <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">My Profile</span></li>
+      </ul>
+      <div class="my-profile__container">
+        <div style="text-align: center" class="row">
+          <h3 style="padding-bottom: 20px;">You are currently in the buyer mode</h3>
+          <%= link_to "Switch To Seller", switch_role_path, method: :post  %>    
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

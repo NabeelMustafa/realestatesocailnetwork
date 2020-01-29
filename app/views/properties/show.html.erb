@@ -1,0 +1,45 @@
+<section class="property">
+  <div class="container">
+    <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Property</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">Single Property V2</span></li>
+    </ul><!-- ht-breadcrumb -->
+  </div><!-- .container -->
+
+  <%= render 'property_content_header', property: @property %>
+
+  <div class="property__container">
+    <div class="container">
+      <div class="row">
+        <%= render 'property_content' , property: @property %>
+
+        <aside class="col-md-3">
+          <div class="widget__container">
+          <section class="widget widget--white widget--padding-20">
+          <h3 class="widget__title">Other Properties</h3>
+
+          <% Property.all.each do |property| %>
+            <% if property != @property %>       
+              <div class="similar-home">
+                <a href="<%= property_path(property) %>">
+                  <div class="similar-home__image">
+                    <div class="similar-home__overlay"></div><!-- .similar-home__overlay -->
+                    <%= image_tag 'uploads/manage-item-1.jpg', alt: 'Weston Hightpointe Place'%>
+                    <span class="similar-home__favorite"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                  </div><!-- .similar-home__image -->
+                  <div class="similar-home__content">
+                    <h3 class="similar-home__title"><%= property.title %></h3>
+                    <span class="similar-home__price"><%= property.property_price %></span>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          <% end %>
+          </section><!-- .widget -->
+          </div>
+        </aside >
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .property__container -->
+</section><!-- .property -->

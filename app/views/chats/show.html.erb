@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+<div class="body-1">
+
+<div class="wrapper1">
+    <div class="container1">
+        <div class="left">
+            <div class="top">
+                <input type="text" placeholder="Search" />
+                <a href="javascript:;" class="search"></a>
+            </div>
+            <ul class="people">
+              <% if @existing_chats_users %>
+                <% @existing_chats_users.each do |other_user| %>
+                  <% if other_user != current_user %>
+                    <%= link_to(chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                      <li class="<%= (other_user.id == @other_user.id ) ? 'person active' : 'person' %>"
+                       data-chat="person1">
+                          <img src="https://ptetutorials.com/images/user-profile.png" alt="" />
+                          <span class="name"><%= other_user.profile[0].first_name %>  <%= other_user.profile[0].last_name %></span>
+                          <span class="time"><%= find_chat(other_user).messages.last ? find_chat(other_user).messages.last.created_at.strftime("%I:%M%p")  : ''%></span>
+                          <span class="preview"><%= find_chat(other_user).messages.last ? find_chat(other_user).messages.last.content  : ''%></span>
+                      </li>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="top"><span>To:  <span class="name"> <%= @other_user.profile[0].first_name %></span></span></div>
+              <div class="chat active-chat" data-chat="person">
+                <div class="msg_history1"  style="overflow-y: scroll; height:400px;     overflow-x: hidden;
+                ">
+                    <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>                
+                </div>
+              </div>
+              <div class="write">
+              <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+  createMessageChannel(); 
+  messageForm();
+  $('.msg_history1').stop ().animate ({
+
+    scrollTop: $('.msg_history1')[0].scrollHeight
+  });
+
+</script>

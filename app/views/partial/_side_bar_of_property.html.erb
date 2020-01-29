@@ -1,0 +1,145 @@
+<aside class="col-md-3">
+  <div class="widget__container">
+    <section class="widget">
+      <form class="contact-form contact-form--white">
+        <div class="contact-form__header">
+          <div class="contact-form__header-container">
+            <%= image_tag 'uploads/contact_agent.png', alt: 'Tristina Avelon'%>
+            <div class="contact-info">
+              <span class="contact-company">Realand Real Estate</span>
+              <h3 class="contact-name"><a href="#">Tristina Avelon</a></h3>
+              <a href="tel:+8002883991" class="contact-number">Call: (800) 288 3991</a>
+            </div><!-- .contact-info -->
+          </div><!-- .contact-form__header-container -->
+        </div><!-- .contact-form__header -->
+        
+        <div class="contact-form__body">
+          <input type="text" class="contact-form__field" placeholder="Name" name="name" required>
+          <input type="email" class="contact-form__field" placeholder="Email" name="email" required>
+          <input type="tel" class="contact-form__field" placeholder="Phone number" name="phone number">
+          <textarea class="contact-form__field contact-form__comment" cols="30" rows="5" placeholder="Comment" name="comment" required>I am interested in Golden House Place 72, 1633 Newcomb Ave, San Francisco, CA 94124</textarea>
+        </div><!-- .contact-form__body -->
+
+        <div class="contact-form__footer">
+          <input type="submit" class="contact-form__submit" name="submit" value="Contact Agent">
+        </div><!-- .contact-form__footer -->
+      </form><!-- .contact-form -->
+    </section><!-- .widget -->
+
+    <section class="widget widget--white widget--padding-20">
+      <h3 class="widget__title">Similar Homes</h3>
+      <div class="similar-home">
+        <a href="single_property_1.html">
+          <div class="similar-home__image">
+            <div class="similar-home__overlay"></div><!-- .similar-home__overlay -->
+             <%= image_tag 'uploads/residia_nishi_azabu.jpg', alt: 'Residia Nishi Azabu'%>
+            <span class="similar-home__favorite"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+          </div><!-- .similar-home__image -->
+          <div class="similar-home__content">
+            <h3 class="similar-home__title">Residia Nishi Azabu</h3>
+            <span class="similar-home__price">$2,185,000</span>
+          </div><!-- .similar-home__content -->
+        </a>
+      </div><!-- .similar-home -->
+
+      <div class="similar-home">
+        <a href="single_property_1.html">
+          <div class="similar-home__image">
+            <div class="similar-home__overlay"></div><!-- .similar-home__overlay -->
+             <%= image_tag 'uploads/dream_house_take_away.jpg', alt: 'Dream House Take Away'%>
+            <span class="similar-home__favorite"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+          </div><!-- .similar-home__image -->
+          <div class="similar-home__content">
+            <h3 class="similar-home__title">Dream House Take Away</h3>
+            <span class="similar-home__price">$2,185,000</span>
+          </div><!-- .similar-home__content -->
+        </a>
+      </div><!-- .similar-home -->
+
+      <div class="similar-home">
+        <a href="single_property_1.html">
+          <div class="similar-home__image">
+          <div class="similar-home__overlay"></div><!-- .similar-home__overlay -->
+          <%= image_tag 'uploads/castalia_shibakoen.jpg', alt: 'Castalia Shibakoen'%>
+          <span class="similar-home__favorite"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+          </div><!-- .similar-home__image -->
+          <div class="similar-home__content">
+            <h3 class="similar-home__title">Castalia Shibakoen</h3>
+            <span class="similar-home__price">$2,185,000</span>
+          </div><!-- .similar-home__content -->
+        </a>
+      </div><!-- .similar-home -->
+    </section><!-- .widget -->
+
+    <section class="widget widget--white widget--padding-20">
+      <h3 class="widget__title">Mortgage Calculator</h3>
+      <form class="form-calculator">
+        <div class="form-calculator__group">
+          <label for="home-price" class="form-calculator__label">Home Price</label>
+          <span class="form-calculator__icon form-calculator__currency">$</span>
+          <input id="home-price" type="text" class="form-calculator__field" required value="2,568,000">
+        </div><!-- .form-calculator__group -->
+
+        <div class="form-calculator__wrapper">
+          <div class="form-calculator__group form-calculator__group--larger">
+            <label for="down-payment" class="form-calculator__label">Down Payment</label>
+            <span class="form-calculator__icon form-calculator__currency">$</span>
+            <input id="down-payment" type="text" class="form-calculator__field" required value="317,600">
+          </div><!-- .form-calculator__group -->
+
+          <div class="form-calculator__group form-calculator__group--smaller">
+            <label for="percent" class="form-calculator__label">Percent</label>
+            <span class="form-calculator__icon form-calculator__percent">%</span>
+            <input id="percent" type="text" class="form-calculator__field" required value="20">
+          </div><!-- .form-calculator__group -->
+        </div><!-- .form-calculator__wrapper -->  
+
+        <div class="form-calculator__group">
+          <label for="annual-rate" class="form-calculator__label">Annual Interest Rate</label>
+          <span class="form-calculator__icon form-calculator__percent">%</span>
+          <input id="annual-rate" type="text" class="form-calculator__field" required value="3.5">
+        </div><!-- .form-calculator__group -->
+
+        <div class="form-calculator__group">
+          <label for="loan-term" class="form-calculator__label">Loan Term (Years)</label>
+          <select id="loan-term" class="ht-field" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10" selected>10</option>
+          </select>
+        </div><!-- .form-calculator__group -->
+        <div class="form-calculator__group">
+          <label for="percent" class="form-calculator__label">Payment Method</label>
+          <select id="percent" class="ht-field" required>
+            <option value="Weekly">WEEKLY</option>
+            <option value="Monthly" selected>MONTHLY</option>
+            <option value="Bi-Weekly">BI-WEEKLY</option>
+          </select>
+        </div><!-- .form-calculator__group -->
+
+        <input type="submit" class="form-calculator__submit" value="Calculate">
+        
+        <div class="form-calculator__result">
+          <h3 class="mortgage-payment">Mortgage Payments: <span>$22253.28</span></h3>
+        </div>
+      </form><!-- .form-calculator -->
+    </section><!-- .widget -->
+
+    <section class="widget widget--white widget--padding-20 widget__news">
+      <h3 class="widget__title">Get to Know</h3>
+      <ul class="widget__news-list">
+        <li class="widget__news-item"><a href="#">Outer Sunset Real Estate: <span>San Francisco Neighborhood Guide</span></a></li>
+        <li class="widget__news-item"><a href="#">Pacific Heights Real Estate: <span>San Francisco CA Neighborhood</span></a></li>
+        <li class="widget__news-item"><a href="#">Mission District San Francisco: <span>Authentic Community</span></a></li>
+        <li class="widget__news-item"><a href="#">Hayes Valley Real Estate: <span>San Francisco CA Neighborhood</span></a></li>
+      </ul>
+    </section><!-- .widget -->
+  </div><!-- .widget__container -->
+</aside>

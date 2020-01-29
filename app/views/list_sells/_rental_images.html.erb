@@ -1,0 +1,19 @@
+
+<div class="submit-property__group">
+<label for="property-featured-image" class="submit-property__label"></label>
+<div class="submit-property__upload">
+<%= form.add_nested_fields_link :rental_images , "Add Images"%>
+
+</div><!-- .submit-proeprty__upload -->
+</div><!-- .submit-property__group -->
+
+
+<%= form.nested_fields_for :rental_images do |ff| %>
+  <div class="submit-property__group">
+      <%= ff.text_field :url, class: "submit-property__field", placeholder: placeholder="Url", :required => true%>
+  </div>
+  <%= ff.remove_nested_fields_link 'Remove',method: :delete, class: 'btn btn-primary', role: 'button'%>
+<% end %>
+
+<br/>
+

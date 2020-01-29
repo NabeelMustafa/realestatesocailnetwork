@@ -1,0 +1,38 @@
+
+
+
+
+<section class="buy_banner">
+      <div class="container">
+        <div class="banner-text" style="margin-bottom: 335px; margin-top: 90px;">
+          <h5>Buy</h5>
+          <form>
+            <input type="text" id="search_buy" placeholder="Enter title or some thing to search properties to buy" name="">
+            <input class="submit-btn" type="button" value="" name="" onClick="clickButton();">
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Section Ends Here -->
+    <section class="homes">
+      <div class="container">
+        <div class="homes-data">
+          <div class="row">
+           
+          <% @list_sells.all.each do |list| %>
+            <%= render 'list_sells/list_sell_card', f: list %>  
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+<hr/>
+
+
+<script>
+function clickButton (){
+  const value = document.getElementById("search_buy").value;
+  window.location.href = '/buy?search=' + value;
+ }
+</script>

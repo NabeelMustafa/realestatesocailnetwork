@@ -1,0 +1,23 @@
+<section style="margin-top: 50px">
+  <h2 style="margin-left: 15px; padding-bottom: 30px; font-size: 24px;">Recently viewed & more</h2>
+  <% @services.each do |service| %>
+    <%= render 'services/service_card', :f => service %>
+  <% end %>
+</section>
+
+<section class="jumbotron"style="margin-top: 50px">
+  <h2 style="margin-left: 15px; padding-bottom: 30px; font-size: 24px;">Pro SEM services
+  </h2>
+  <% @services.each do |service| %>
+    <%= render 'services/service_card', :f => service %>
+  <% end %>
+</section>
+
+
+<section style="margin-top: 50px">
+  <h2 style="margin-left: 15px; padding-bottom: 30px; font-size: 24px;">Similar to services you've viewed
+  </h2>
+  <% @services.each do |service| %>
+    <%= render 'services/service_card', :f => service %>
+  <% end %>
+</section>

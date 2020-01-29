@@ -1,0 +1,37 @@
+
+
+
+
+<div class="body-1">
+
+<div class="wrapper1">
+    <div class="container1">
+        <div class="left">
+            <div class="top">
+                <input type="text" placeholder="Search" />
+                <a href="javascript:;" class="search"></a>
+            </div>
+            <ul class="people">
+              <% if @existing_chats_users %>
+                <% @existing_chats_users.each do |other_user| %>
+                  <% if other_user != current_user %>
+                    <%= link_to(chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                      <li class="person" data-chat="person1">
+                          <img src="https://ptetutorials.com/images/user-profile.png" alt="" />
+                          <span class="name"><%= other_user.profile[0].first_name %>  <%= other_user.profile[0].last_name %></span>
+                          <span class="time"><%= find_chat(other_user).messages.last ? find_chat(other_user).messages.last.created_at.strftime("%I:%M%p")  : ''%></span>
+                          <span class="preview"><%= find_chat(other_user).messages.last ? find_chat(other_user).messages.last.content  : ''%></span>
+                      </li>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="top"><span>No Chat Selected - <span class="name"> SELECT CHAT TO CONTINUE</span></span></div>
+          
+        </div>
+    </div>
+</div>
+</div>

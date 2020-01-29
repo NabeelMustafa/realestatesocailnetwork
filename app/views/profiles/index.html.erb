@@ -1,0 +1,92 @@
+
+<section class="my-profile">
+<div class="container">
+  <ul class="ht-breadcrumbs ht-breadcrumbs--y-padding ht-breadcrumbs--b-border">
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Home</span></a></li>
+      <li class="ht-breadcrumbs__item"><a href="#" class="ht-breadcrumbs__link"><span class="ht-breadcrumbs__title">Pages</span></a></li>
+      <li class="ht-breadcrumbs__item"><span class="ht-breadcrumbs__page">My Profile</span></li>
+  </ul><!-- .ht-breadcrumb -->
+
+  <div class="my-profile__container">
+    <div class="row">
+      <div class="col-md-4" style="    width: 33.33333333333333% !important; float: left !important;">
+        <div class="profile-left">
+          <section>
+            <div class="pic-wrapper">
+              <div style="    box-sizing: border-box;">
+                <div style="display:inline-block"><div class="_e296pg" style="height:120px;width:120px; display:block">
+                  <img class="_1mgxxu3" src="https://a0.muscache.com/defaults/user_pic-225x225.png?v=3" height="120" width="120" alt="12" title="12">
+                </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="_teetq4b">
+                <%= link_to 'Edit Profile', edit_profile_path(@profile),  style: "color: #ED4737"%></div>
+                <hr/>
+          <div class="_czm8crp"><%= current_user.email %></div>
+            </div>
+          </section>
+          <br/>
+          
+        </div>
+        <div class="settings-block">
+          <ul class="settings" style="margin-left: 2rem">
+          <li class="setting setting--current"><a href="" class="setting__link"><i class="ion-ios-person-outline
+
+          setting__icon"></i>Profile</a></li>
+
+              <li class="setting"><a href="/find-friend" class="setting__link"><i class="ion-man
+
+              setting__icon"></i>Find Friends</a></li>
+              <li class="setting"><a href="" class="setting__link"><i class="ion-ios-unlocked-outline setting__icon"></i>Change Password</a></li>
+              <li class="setting">
+              <li class="setting"><a href="/list_arts" class="setting__link"><i class="ion-ios-analytics-outline setting__icon"></i>Art</a></li>
+              <li class="setting">
+              <li class="setting"><a href="/list_furnitures" class="setting__link"><i class="ion-ios-analytics-outline setting__icon"></i>Furnitures</a></li>
+              <li class="setting">
+              <a href="<%= destroy_user_session_path %>" class="setting__link"><i class="ion-ios-undo-outline setting__icon"></i><%= link_to "Logout", destroy_user_session_path, method: :delete , class: "setting__link"%>    </a>
+                          
+              </li>
+          </ul><!-- settings -->
+      </div><!-- .settings-block -->
+        
+      </div><!-- .col -->
+
+      <div class="col-md-8" style=" margin-left 1rem">
+      <div class="_1ekkhy94"><%= @profile.first_name   %> <%= @profile.last_name   %></div>
+      <hr/>
+      <section class="profile-info" style="margin-top: -22px;">
+      <h2>ABOUT</h2>
+      <p>
+      <%= @profile.about_me   %>
+      </p>
+      <hr/>
+      <h2>Contact</h2>
+      <aside class="social-media-icons">
+        <a href="https://<%= @profile.twitter_add   %>" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+        <a href="https://<%= @profile.facebook_add   %>" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+        <a href="https://<%= @profile.linkedin_add   %>" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+        </a>
+        <a href="tel:<%= @profile.ph_no   %>" target="_blank">
+                        <i class="fa fa-phone-square"></i>
+                    </a>
+      </aside>
+    </section>
+  <section class="statistics">
+
+  </section>
+
+      </div><!-- .col -->
+      
+      </div>
+
+    </div><!-- .row -->
+  </div><!-- .my-profile__container -->
+</div><!-- .container -->
+</section><!-- .my-profile -->

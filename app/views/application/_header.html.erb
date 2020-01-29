@@ -1,0 +1,74 @@
+<div class="navbar-custom sticky">
+  <div class="menu-hamburger">
+    <%= image_tag "hamburger.png" %>
+  </div>
+  <div class="menu-item">
+    <%= link_to 'Buy', buy_path %>
+  </div>
+  <div class="menu-item">
+    <%= link_to 'Rent', rent_path %>
+  </div>
+  <div class="menu-item">
+    <%= link_to 'Sell', sell_path %>
+  </div>
+  <div class="menu-item">
+  <%= link_to 'Mortgage', mortgage_path %>
+  </div>
+  <div class="menu-item">
+  <%= link_to 'Insurance', insurance_path %>
+  </div>
+  <div class="menu-logo">
+    <%= link_to root_path do %>
+      <%= image_tag "RESNlogo1.png",:style=>"max-height: 60px" %>
+    <% end %>
+  </div>
+  <div class="menu-item">
+    <%= link_to 'Realtors', realtors_path %>
+  </div>
+  <div class="menu-item">
+    <%=link_to "Services", services_path %>
+  </div>
+  <div class="menu-item">
+    <%= link_to 'List New', list_new_path %>
+  </div>
+  <% if user_signed_in? %>
+  <div class="menu-item">
+      <%= link_to "Messages", '/chats' %>
+    </div>
+    <div class="menu-item" style="float: right;">
+    <div class="dropdown">
+    <a href=""# class="account" >
+    <img src="https://a0.muscache.com/defaults/user_pic-50x50.png?v=3" class="profile-circle"/>
+    </a>
+    <div class="submenu" style="display: none; ">
+    <ul class="root">
+    <li >
+
+    <%= link_to 'Profile', current_user.profile.first ? profiles_path : new_profile_path   %>    
+    
+    </li>
+    <li>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete  %>    
+    </li>
+
+    <li>
+    <%= link_to "Switch To #{current_user.has_role?(:seller) ? "Buyer" : "Seller"}", switch_role_path, method: :post  %>    
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+
+    
+  <% else %>
+  <div class="menu-item">
+      <%= link_to "Sign up", new_user_registration_path  %>
+    </div>
+    <div class="menu-item">
+      <%= link_to "Sign in", new_user_session_path %>
+    </div>
+  <% end %>
+  <!-- <div class="menu-item">
+    <a href="">|&nbsp;&nbsp;&nbsp;   Advertise </a>
+  </div> -->
+</div>

@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gated_entry: false
+  living_community: false
+  sport_court: false
+  transport: false
+  door_man: false
+  elevetor: false
+  fitness: false
+  styel: MyString
+  brick: false
+  cement: false
+  metal: false
+  shingle: false
+  other: false
+  stone: false
+  floor_no: MyString
+  no_unit: MyString
+  no_stories: MyString
+  no_parking: MyString
+
+two:
+  gated_entry: false
+  living_community: false
+  sport_court: false
+  transport: false
+  door_man: false
+  elevetor: false
+  fitness: false
+  styel: MyString
+  brick: false
+  cement: false
+  metal: false
+  shingle: false
+  other: false
+  stone: false
+  floor_no: MyString
+  no_unit: MyString
+  no_stories: MyString
+  no_parking: MyString
